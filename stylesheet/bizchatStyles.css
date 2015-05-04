@@ -1,0 +1,27 @@
+.bizchatbuttonbox {
+	text-align:center;
+	border-style:solid;
+	border-width:2px;
+	border-radius:20px;
+	border-color:#21759b;
+	padding:6px;
+	width:40%;
+	margin:0 auto;
+}
+.bizchatcontentdiv {
+	text-align:center;
+}
+.bizchatbutton {
+	color:#fff;
+	background-color:#4a97d4;
+	height:60px;
+	width:200px;
+	border-radius:17px;
+	font-size:2em;
+	border-style:solid;
+}
+.bizchatlinkbox {
+	width:40%;
+	margin:0 auto;
+	text-align: left;
+}
