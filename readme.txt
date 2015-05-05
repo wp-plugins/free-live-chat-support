@@ -1,4 +1,4 @@
-=== Pure Chat - Free Live Chat Plugin ===
+=== BizChatBox - Free Live Chat Plugin ===
 Contributors: BizChatBox
 Donate link: https://www.BizChatBox.com
 Tags: chat, livechat, live, live chat, bizchatbox, business chat, online chat, chat online, wordpress chat, customer support, live help, chat widget, customer help, chat widget
@@ -13,18 +13,31 @@ BizchatBox is a FREE live chat software that allows businesses to engage their c
 BizChatBox  is a web app that makes it easy for website owners to chat with their visitors from anywhere! BizChatBox is packed with all the features you need to provide premium customer support. It is light weight, reliable, customizable and scalable chat widget. Gain your competitive advantage today.
 
 100 % Free
+
 Unlimited Chat Widgets
+
 Unlimited Chats on unlimited websites, blogs, forums etc
+
 Unlimited Operators Accounts
+
 iPhone and Android Mobile apps
+
 No Advertisements
+
 Highly customizable designs
+
 Geolocation data for users -- know where your visitors are from!
+
 Ban users by IP
+
 Daily emails reports
+
 Full chat transcript history
+
 User ratings for interactions
+
 Customizable canned responses for common questions
+
 Integrations with third party products
 
 == Installation ==
@@ -38,27 +51,27 @@ Integrations with third party products
 
 == Frequently Asked Questions ==
 
-= Do I have to install any extra software?
+1. Do I have to install any extra software?
 
 No, just this plugin.
  
-= How can I change the appearance of the widget on my page?
+2. How can I change the appearance of the widget on my page?
 
 You can change all your widget settings from your BizChatBox dashboard.
- 
-= What pricing plans do you offer?
+
+3. What pricing plans do you offer?
 
 BizChatBox is 100% Free.
  
-= Are there any ads?
+4. Are there any ads?
 
 No! There are no annoying ads in BizChatBox.
  
-= What do my visitors see if I'm not online to take their chats?
+5. What do my visitors see if I'm not online to take their chats?
 
 You decide! Your widget can display an offline indicator, disappear entirely, or let visitors email you with their questions.
  
-= Can I temporarily remove the chat widget from my site without losing my settings?
+6. Can I temporarily remove the chat widget from my site without losing my settings?
 
 Yes, deactivating the BizChatBox plugin will stop the widget from showing up, but your preferred widget settings will remain for when you want to reactivate it.
 
