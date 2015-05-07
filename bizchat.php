@@ -45,7 +45,7 @@ function biz_chat_generateAcctPage(){
 	?>	
 	<p>		
 	<div class="bizchatbuttonbox">
-		<img src="<?php echo plugins_url( 'logo.png', __FILE__ )?>"alt="BizChat logo"></img>
+		<img src="<?php echo plugins_url( 'logo.png', __FILE__ )?>"alt="BizChat logo" style="height: 100px;"></img>
 		<div class = "bizchatcontentdiv">
 			<?php
 			if (get_option('bizchat_widget_code') == "" ) {
