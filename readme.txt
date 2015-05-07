@@ -12,6 +12,8 @@ BizchatBox is a FREE live chat software that allows businesses to engage their c
 
 BizChatBox  is a web app that makes it easy for website owners to chat with their visitors from anywhere! BizChatBox is packed with all the features you need to provide premium customer support. It is light weight, reliable, customizable and scalable chat widget. Gain your competitive advantage today.
 
+WebSite : www.bizchatbox.com
+
 100 % Free
 
 Unlimited Chat Widgets
@@ -39,6 +41,8 @@ User ratings for interactions
 Customizable canned responses for common questions
 
 Integrations with third party products
+
+Check out our website fore more details http://www.bizchatbox.com/features/
 
 == Installation ==
 
