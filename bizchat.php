@@ -9,7 +9,7 @@ Plugin URI:
 Description: Website chat, simplified. Now from right inside WordPress!
 Author: BizChat
 Version: 1.1
-Author URI: www.BizChatBox.biz
+Author URI: www.bizchatbox.com
 */
 
 include 'variables.php';
@@ -131,14 +131,15 @@ function Bizchatbox_script_style_load() {
     wp_enqueue_script('Bizchatbox_hubs');
 	
 	//css 
-	wp_register_style( 'BizchatBox_style', plugins_url( '/stylesheet/BizChat.css', __FILE__ ) );
+	wp_register_style( 'BizchatBox_style', plugins_url( '/stylesheet/BizChat.css', __FILE__ ));
 	wp_enqueue_style( 'BizchatBox_style' );
 	
 	//ChatTable Additional Stylesheet
-	wp_register_style( 'BiChatbox_chattable_style', plugins_url( '/stylesheet/BizchatpluginStyle.css', __FILE__ ) );
+	wp_register_style( 'BiChatbox_chattable_style', plugins_url( '/stylesheet/BizchatpluginStyle.css', __FILE__ ));
 	wp_enqueue_style( 'BiChatbox_chattable_style' );
 } 
-add_action( 'wp_enqueue_scripts', 'Bizchatbox_script_style_load' );
+add_action( 'wp_enqueue_scripts', 'Bizchatbox_script_style_load');
+
 if (!function_exists('load_BizChat_scripts')) {
 	function load_BizChat_scripts() {
 		global $pagenow;

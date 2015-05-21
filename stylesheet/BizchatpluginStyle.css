@@ -18,7 +18,7 @@
 }
 .chattable .messinput {
 	width:90%;
-	height:62px;
+	/*height:75px;*/
 	font-family:Calibri;
 	font-size:medium;
 	resize:none;
