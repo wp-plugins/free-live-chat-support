@@ -92,23 +92,26 @@ Yes, deactivating the BizChatBox plugin will stop the widget from showing up, bu
 
 == Changelog ==
 
-= 1.0 =
-* Plugin launch.
+= 1.2 =
+* Load performance improved. Layout improvements. 
 
 = 1.1 =
 * Minor Bug fixes
 
-= 1.2 =
-* Load performance improved. Layout improvements. 
+= 1.0 =
+* Plugin launch.
 
 
 == Upgrade Notice ==
 
-= 1.0 =
-* Plugin launch.
+= 1.2 =
+* Load performance improved. Layout improvements. 
 
 = 1.1 =
 * Minor Bug fixes
 
-= 1.2 =
-* Load performance improved. Layout improvements. 
+= 1.0 =
+* Plugin launch.
+
+
+
