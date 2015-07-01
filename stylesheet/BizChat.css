@@ -1,18 +1,10 @@
+
+/** * html5doctor.com Reset Stylesheet v1.6.1 (http://html5doctor.com/html-5-reset-stylesheet/) * Richard Clark (http://richclarkdesign.com) * http://cssreset.com */html, body, div, span, object, iframe, h2, h3, h4, h5, h6, blockquote, pre,abbr, address, cite, code,del, dfn, em, img, ins, kbd, q, samp,small, strong, sub, sup, var,b, i,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, figcaption, figure,footer, header, hgroup, menu, nav, section, summary,time, mark, audio, video {    margin:0;    padding:0;    border:0;    outline:0;    font-size:100%;    vertical-align:baseline;    background:transparent;}body {line-height:1;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {    display:block;}nav ul {    list-style:none;}blockquote, q {    quotes:none;}blockquote:before, blockquote:after,q:before, q:after {    content:'';    content:none;}a {    margin:0;    padding:0;    font-size:100%;    vertical-align:baseline;    background:transparent;}/* change colours to suit your needs */ins {    background-color:#ff9;    color:#000;    text-decoration:none;}/* change colours to suit your needs */mark {    background-color:#ff9;    color:#000;    font-style:italic;    font-weight:bold;}del {    text-decoration: line-through;}abbr[title], dfn[title] {    border-bottom:1px dotted;    cursor:help;}table {    border-collapse:collapse;    border-spacing:0;}/* change border colour to suit your needs */hr {    display:block;    height:1px;    border:0;    border-top:1px solid #cccccc;    margin:1em 0;    padding:0;}input, select {    vertical-align:middle;}
+
+
 .chatwindow {
     /*width: 325px;
     position: fixed;*/
-}
-
-.like-img {
-    /*width: 15%;*/
-}
-
-.likeimg {
-    /*width: 15%;*/
-}
-
-.chattable {
-    width: 370px;
 }
 
 .chat-img {
@@ -26,7 +18,7 @@
 
 .chattable .quesinput {
     width: 86%;
-    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
     margin-top: 1%;
     margin-left: 6%;
     border-radius: 4px;
@@ -46,7 +38,7 @@
     box-shadow: 0 0 6px 0px #888;
     margin: 5px 0;
     font-size: 1.1em;
-    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
     line-height: 1.5em;
 }
 
@@ -59,7 +51,7 @@
     box-shadow: 0 0 6px 0px #888;
     margin: 5px 0;
     font-size: 1.1em;
-    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
     line-height: 1.5em;
 }
 
@@ -70,7 +62,7 @@
     -webkit-border-radius:5px 5px 5px 0;
     border-radius: 5px 5px 5px 0;
     box-shadow: 0 0 6px 0px #888;
-    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
 }
 
     .chattableraw .hederbtn .btnimg {
@@ -78,7 +70,7 @@
         align-self: flex-end;
         margin-bottom: -5px;
         margin-left: 1px;
-        font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
     }
 
 .chattable .chat-messages {
@@ -87,14 +79,14 @@
     border-radius: 4px;
     background: #fff;
     overflow: auto;
-    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
 }
 
 .chattable .inchatmsg {
     text-align: center;
     margin: 0px;
     font-size: .7em;
-    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
     font-style: italic;
     line-height: 1.5em;
     /*min-height: 200px;*/
@@ -104,7 +96,7 @@
     text-align: center;
     margin: 5px 0;
     font-size: .9em;
-    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
     /*font-style: italic;*/
     line-height: 1.5em;
     /*min-height: 200px;*/
@@ -114,10 +106,10 @@
     border: 1px solid #dcdcdc;
     border-radius: 4px;
     background: #fff;
-    overflow: auto;
+    /*overflow: auto;*/
     margin-top: -1%;
     color: gray;
-    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
     position: relative;
 }
 
@@ -128,7 +120,7 @@
     font-size: .9em;
     font-style: italic;
     line-height: 1.5em;
-    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
 }
 
 .chattable .message-you {
@@ -139,7 +131,7 @@
     border: 1px solid #E5E5E5;
     background: #FFFCF2;
     border-radius: 3px;
-    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
 }
 
 .chattable .message-me {
@@ -151,20 +143,20 @@
     padding: 10px;
     border: 1px solid #E5E5E5;
     border-radius: 3px;
-    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
 }
 
 .chattable .message-time {
     float: right;
     font-size: 11px;
-    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
     font-style: italic;
     color: #aaa;
 }
 
 .chattable .message {
     display: block;
-    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
     margin-top: 10px;
 }
 
@@ -172,7 +164,7 @@
     width: 99%;
     height: 25px;
     border-radius: 5px;
-    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
 }
 
 .chattable .nameinput {
@@ -183,13 +175,13 @@
     border: 1px solid #ccc !important;
     padding: 3px 3px;
     box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
-    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
 }
 
 .chattable .messinput {
     width: 90%;
     /*height: 60px;*/
-    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
     font-size: 15px;
     resize: none;
     border-radius: 5px;
@@ -200,30 +192,26 @@
 
 .name-messages h3 {
     margin-left: 20px;
-    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
 }
 
 .name-messages button {
     margin: 15px;
-    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
     /*background: #AECF5E!important;*/
     color: #ebebeb;
-    /* border-radius: 3px; */
+     border-radius: 8px; 
     /* text-overflow: initial; */
     white-space: nowrap;
     height: 36px!important;
-    /* border: 1px solid #aecf5f!important; */
+    border: 1px solid !important;
+    box-shadow: none;
+    padding:6px !important;
 }
 
 .messages {
     padding: 5px;
 }
-
-    /*.messages ul {
-        padding: 0px;
-        list-style-type: none;
-    }*/
-
         .messages div {
             height: auto;
             margin-bottom: 10px;
@@ -241,7 +229,7 @@
                 .messages div span.left {
                     float: left;
                     left: 15px;
-                    max-width: 270px;
+                    max-width: 78%;
                     color: white;
                 }
 
@@ -295,7 +283,7 @@
                     float: right;
                     background-color: gainsboro;
                     right: 15px;
-                    max-width: 270px;
+                    max-width: 78%;
                 }
 
 .clear {
@@ -304,17 +292,24 @@
 
 .lefttime {
   left: 58px;
-  margin-top: -8px;
+  margin-top: -7px;
   position: absolute;
   font-size: 12px;
-  line-height: 1.5;
+  line-height:1.5;
 }
 
 .righttime {
   right: 60px;
-  margin-top: -8px;
+  margin-top: -7px;
   position: absolute;
   font-size: 12px;
-  line-height: 1.5;
+  line-height:1.5;
 }
+
+button a {
+    text-transform:none;
+    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+}
+
+
 
