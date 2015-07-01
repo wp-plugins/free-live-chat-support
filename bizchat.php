@@ -1,14 +1,14 @@
 <?php
 /**
  * @package Biz_chat
- * @version 1.1
+ * @version 1.3
  */
 /*
 Plugin Name: BizChat
 Plugin URI: 
-Description: Website chat, simplified. Now from right inside WordPress!
-Author: BizChat
-Version: 1.1
+Description: BizChatBox is packed with all the features you need to provide premium customer support. It is light weight, reliable, customizable and scalable chat widget. Gain your competitive advantage today.
+Author: BizChatBox
+Version: 1.3
 Author URI: www.bizchatbox.com
 */
 
