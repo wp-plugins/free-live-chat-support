@@ -4,10 +4,10 @@
  * @version 1.1
  */
 /*
-Plugin Name: BizChatBox
+Plugin Name: BizChat
 Plugin URI: 
 Description: Website chat, simplified. Now from right inside WordPress!
-Author: BizChatBox
+Author: BizChat
 Version: 1.1
 Author URI: www.bizchatbox.com
 */
@@ -18,7 +18,7 @@ add_action('admin_menu', 'biz_chat_menu');
 add_action('wp_ajax_BizChat_update', 'BizChat_update');
 
 function biz_chat_menu() {
-	add_menu_page('BizChat', 'BizChatBox', 'manage_options', 'bizchat-menu', 'biz_chat_generateAcctPage', plugins_url( 'favicon.ico', __FILE__ ));
+	add_menu_page('BizChat', 'BizChat', 'manage_options', 'bizchat-menu', 'biz_chat_generateAcctPage', plugins_url( 'favicon.png', __FILE__ ));
 	add_option('bizchat_widget_code', '', '', 'yes');
 	add_option('bizchat_widget_name', '', '', 'yes');
 	add_option('bizchat_code', '', '', 'yes'); 
@@ -48,12 +48,12 @@ function biz_chat_generateAcctPage(){
 		<img src="<?php echo plugins_url( 'logo.png', __FILE__ )?>"alt="BizChat logo" style="height: 100px;"></img>
 		<div class = "bizchatcontentdiv">
 			<?php
-			if (get_option('bizchat_widget_code') == "" || get_option('bizchat_widget_name') == undefined ) {
+			if (get_option('bizchat_widget_code') == "" ) {
 				?>
 				<p>
-				BizChatBox allows you to chat in real time with visitors to your WordPress site. Click the button below to get started by login to BizChatBox and selecting a chat widget!
+				BizChat allows you to chat in real time with visitors to your WordPress site. Click the button below to get started by logging in to BizChat and selecting a chat widget!
 				</p>
-				The button will open a widget selector in an external page. Keep in mind that your BizChatBox account is separate from your WordPress account.
+				The button will open a widget selector in an external page. Keep in mind that your Pure Chat account is separate from your WordPress account.
 				<?php
 			} else {
 				?>
@@ -79,6 +79,7 @@ function biz_chat_generateAcctPage(){
 		var BizChatChildWindow;
 		function openBizChatChildWindow() {
 		var data = localStorage.getItem("LoginData");
+			//console.log("data",data);
 			if (data) {
 				window.open('<?php echo $bizchatHome;?>Plugin/remotelogin.html');
 			}
@@ -102,17 +103,12 @@ function biz_chat_generateAcctPage(){
 			jQuery.post(url, data)
 				.done(function(){
 			})
-			
-			if(widgetIdToPass == "" || widgetIdToPass == undefined){
-			}
-			else{
-			document.getElementsByClassName('bizchatcontentdiv')[0].innerHTML = '<h4>Your current chat widget is:</h4><h1 class="BizChatCurrentWidgetName">' + widgetNameToPass   + '</h1><p>Would you like to switch widgets?</p>';
-			}
+			document.getElementsByClassName('bizchatcontentdiv')[0].innerHTML = '<h4>Your current chat widget is:</h4><h1 class="BizChatCurrentWidgetName">' + widgetNameToPass   + '</h1><p>Would you like to switch widgets?'; 
 		};
 	</script>
 	<div class="bizchatlinkbox">
 		<p>
-		<a href="http://dashboard.bizchatbox.com/Home/Dashboard" target="_blank">Your BizChatBox dashboard page</a>
+		<a href="http://dashboard.bizchatbox.com/Home/Dashboard" target="_blank">Your BizChat dashboard page</a>
 		is your place to answer chats, add more widgets, customize their appearance with images and text, manage users, and more!
 		</p>
 	</div>
@@ -131,12 +127,16 @@ function Bizchatbox_script_style_load() {
     wp_enqueue_script( 'Bizchatbox_signal_script' );
 	
 	//plugin_hubs
-	wp_register_script('Bizchatbox_hubs', 'https://dashboard.bizchatbox.com/signalr/hubs', __FILE__,array());
+	wp_register_script('Bizchatbox_hubs', 'http://dashboard.bizchatbox.com/signalr/hubs', __FILE__,array());
     wp_enqueue_script('Bizchatbox_hubs');
 	
-	//Bizchat css 
+	//css 
 	wp_register_style( 'BizchatBox_style', plugins_url( '/stylesheet/BizChat.css', __FILE__ ));
 	wp_enqueue_style( 'BizchatBox_style' );
+	
+	//ChatTable Additional Stylesheet
+	wp_register_style( 'BiChatbox_chattable_style', plugins_url( '/stylesheet/BizchatpluginStyle.css', __FILE__ ));
+	wp_enqueue_style( 'BiChatbox_chattable_style' );
 } 
 add_action( 'wp_enqueue_scripts', 'Bizchatbox_script_style_load');
 
