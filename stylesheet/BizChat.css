@@ -1,21 +1,10 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800);
+
+/** * html5doctor.com Reset Stylesheet v1.6.1 (http://html5doctor.com/html-5-reset-stylesheet/) * Richard Clark (http://richclarkdesign.com) * http://cssreset.com */html, body, div, span, object, iframe, h2, h3, h4, h5, h6, blockquote, pre,abbr, address, cite, code,del, dfn, em, img, ins, kbd, q, samp,small, strong, sub, sup, var,b, i,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, figcaption, figure,footer, header, hgroup, menu, nav, section, summary,time, mark, audio, video {    margin:0;    padding:0;    border:0;    outline:0;    font-size:100%;    vertical-align:baseline;    background:transparent;}body {line-height:1;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {    display:block;}nav ul {    list-style:none;}blockquote, q {    quotes:none;}blockquote:before, blockquote:after,q:before, q:after {    content:'';    content:none;}a {    margin:0;    padding:0;    font-size:100%;    vertical-align:baseline;    background:transparent;}/* change colours to suit your needs */ins {    background-color:#ff9;    color:#000;    text-decoration:none;}/* change colours to suit your needs */mark {    background-color:#ff9;    color:#000;    font-style:italic;    font-weight:bold;}del {    text-decoration: line-through;}abbr[title], dfn[title] {    border-bottom:1px dotted;    cursor:help;}table {    border-collapse:collapse;    border-spacing:0;}/* change border colour to suit your needs */hr {    display:block;    height:1px;    border:0;    border-top:1px solid #cccccc;    margin:1em 0;    padding:0;}input, select {    vertical-align:middle;}
+
 
 .chatwindow {
     /*width: 325px;
     position: fixed;*/
-}
-
-.like-img {
-    /*width: 15%;*/
-}
-
-.likeimg {
-    /*width: 15%;*/
-}
-
-.chattable {
-    width: 370px;
-	margin-bottom:0!important; 
 }
 
 .chat-img {
@@ -23,20 +12,13 @@
 }
 
 .chattableraw {
-    /*height: 50px!important;*/
+    height: 32px;
     background-color: #000;
-	  
 }
-#maxmizes {
-    margin: 12px 0;
-}
-#inchathead{ line-height:39px!important; padding:0 10px!important;}
-#operatorimgdiv{ height:70px!important; padding:8px 10px!important;}
-#operatorimgdiv a{ outline:none!important;}
-#SendRequest > a{ color:#fff!important;}
+
 .chattable .quesinput {
     width: 86%;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
     margin-top: 1%;
     margin-left: 6%;
     border-radius: 4px;
@@ -50,49 +32,45 @@
 .chattableraw .hedertext {
     width: 76%;
     color: #fff;
-/*    -moz-border-radius:5px 5px 0 5px;
+    -moz-border-radius:5px 5px 0 5px;
     -webkit-border-radius:5px 5px 0 5px;
-    border-radius: 5px 5px 0 5px;*/
+    border-radius: 5px 5px 0 5px;
     box-shadow: 0 0 6px 0px #888;
     margin: 5px 0;
-    font-size: 16px!important;
-    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1em;
+    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
     line-height: 1.5em;
-	padding:3px 10px!important;
-	line-height:39px!important;
 }
 
 .chattableraw .sendreq {
     width: 76%;
     color: #fff;
-   /* -moz-border-radius:5px 5px 0 5px;
+    -moz-border-radius:5px 5px 0 5px;
     -webkit-border-radius:5px 5px 0 5px;
-    border-radius: 5px 5px 0 5px;*/
+    border-radius: 5px 5px 0 5px;
     box-shadow: 0 0 6px 0px #888;
     margin: 5px 0;
     font-size: 1.1em;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
     line-height: 1.5em;
 }
 
 .chattableraw .hederbtn {
     width: 8%;
     color: #fff;
- /*    -moz-border-radius:5px 5px 5px 0;
+     -moz-border-radius:5px 5px 5px 0;
     -webkit-border-radius:5px 5px 5px 0;
-    border-radius: 5px 5px 5px 0;*/
+    border-radius: 5px 5px 5px 0;
     box-shadow: 0 0 6px 0px #888;
-    font-family: 'Open Sans', sans-serif;
-	padding:0px 10px 0 8px!important;
+    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
 }
-td.hederbtn a:focus{ outline:none!important; outline-offset:0!important;}
 
     .chattableraw .hederbtn .btnimg {
         width: 20px;
         align-self: flex-end;
-        margin-bottom: -10px;   
+        margin-bottom: -5px;
         margin-left: 1px;
-        font-family: 'Open Sans', sans-serif;
+        font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
     }
 
 .chattable .chat-messages {
@@ -101,14 +79,14 @@ td.hederbtn a:focus{ outline:none!important; outline-offset:0!important;}
     border-radius: 4px;
     background: #fff;
     overflow: auto;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
 }
 
 .chattable .inchatmsg {
     text-align: center;
     margin: 0px;
     font-size: .7em;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
     font-style: italic;
     line-height: 1.5em;
     /*min-height: 200px;*/
@@ -118,26 +96,22 @@ td.hederbtn a:focus{ outline:none!important; outline-offset:0!important;}
     text-align: center;
     margin: 5px 0;
     font-size: .9em;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
     /*font-style: italic;*/
     line-height: 1.5em;
     /*min-height: 200px;*/
-	
 }
 
 .chattable .name-messages {
     border: 1px solid #dcdcdc;
     border-radius: 4px;
     background: #fff;
-    overflow: auto;
+    /*overflow: auto;*/
     margin-top: -1%;
-    color: gray!important;
-    font-family: 'Open Sans', sans-serif;
+    color: gray;
+    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
     position: relative;
-	padding:25px 0!important;
 }
-.name-messages button:hover{ background:none!important; border:1px solid #333!important; color:#333!important;}
-
 
 .chattable p {
     padding: 10px;
@@ -146,7 +120,7 @@ td.hederbtn a:focus{ outline:none!important; outline-offset:0!important;}
     font-size: .9em;
     font-style: italic;
     line-height: 1.5em;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
 }
 
 .chattable .message-you {
@@ -157,7 +131,7 @@ td.hederbtn a:focus{ outline:none!important; outline-offset:0!important;}
     border: 1px solid #E5E5E5;
     background: #FFFCF2;
     border-radius: 3px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
 }
 
 .chattable .message-me {
@@ -169,20 +143,20 @@ td.hederbtn a:focus{ outline:none!important; outline-offset:0!important;}
     padding: 10px;
     border: 1px solid #E5E5E5;
     border-radius: 3px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
 }
 
 .chattable .message-time {
     float: right;
     font-size: 11px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
     font-style: italic;
     color: #aaa;
 }
 
 .chattable .message {
     display: block;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
     margin-top: 10px;
 }
 
@@ -190,7 +164,7 @@ td.hederbtn a:focus{ outline:none!important; outline-offset:0!important;}
     width: 99%;
     height: 25px;
     border-radius: 5px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
 }
 
 .chattable .nameinput {
@@ -201,13 +175,13 @@ td.hederbtn a:focus{ outline:none!important; outline-offset:0!important;}
     border: 1px solid #ccc !important;
     padding: 3px 3px;
     box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
 }
 
 .chattable .messinput {
     width: 90%;
     /*height: 60px;*/
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
     font-size: 15px;
     resize: none;
     border-radius: 5px;
@@ -218,30 +192,26 @@ td.hederbtn a:focus{ outline:none!important; outline-offset:0!important;}
 
 .name-messages h3 {
     margin-left: 20px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
 }
 
 .name-messages button {
     margin: 15px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
     /*background: #AECF5E!important;*/
     color: #ebebeb;
-    /* border-radius: 3px; */
+     border-radius: 8px; 
     /* text-overflow: initial; */
     white-space: nowrap;
     height: 36px!important;
-    /* border: 1px solid #aecf5f!important; */
+    border: 1px solid !important;
+    box-shadow: none;
+    padding:6px !important;
 }
 
 .messages {
     padding: 5px;
 }
-
-    /*.messages ul {
-        padding: 0px;
-        list-style-type: none;
-    }*/
-
         .messages div {
             height: auto;
             margin-bottom: 10px;
@@ -259,7 +229,7 @@ td.hederbtn a:focus{ outline:none!important; outline-offset:0!important;}
                 .messages div span.left {
                     float: left;
                     left: 15px;
-                    max-width: 270px;
+                    max-width: 78%;
                     color: white;
                 }
 
@@ -313,7 +283,7 @@ td.hederbtn a:focus{ outline:none!important; outline-offset:0!important;}
                     float: right;
                     background-color: gainsboro;
                     right: 15px;
-                    max-width: 270px;    
+                    max-width: 78%;
                 }
 
 .clear {
@@ -322,27 +292,24 @@ td.hederbtn a:focus{ outline:none!important; outline-offset:0!important;}
 
 .lefttime {
   left: 58px;
-  margin-top: -15px!important;
+  margin-top: -7px;
   position: absolute;
   font-size: 12px;
-  line-height: 1.5;
+  line-height:1.5;
 }
 
 .righttime {
   right: 60px;
-  margin-top: -15px!important;
+  margin-top: -7px;
   position: absolute;
   font-size: 12px;
-  line-height: 1.5;
+  line-height:1.5;
 }
-#clschatrefresh a img{ margin-bottom:-11px!important;}
-.name-messages > h4{ font-size:20px!important;}
-#name-box td{ padding:0!important;}
-#close-box td{ padding:0!Important;}
-#SendRequest > a:hover{ color:#333!important;}
-#NoOp-box td{ padding:0!important;}
-.name-messages{ padding-left:10px!important;}
 
-label#lblemailintro{ margin:0; padding:0 15px; float:left; font-size:16px; font-weight:normal; }
+button a {
+    text-transform:none;
+    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+}
 
-table tr td{ padding:0!important;}
+
+
