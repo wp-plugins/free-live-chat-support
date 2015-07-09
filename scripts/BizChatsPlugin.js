@@ -75,6 +75,18 @@ jQuery(function ($) {
         setTimeout(function () {
             chat.server.operatorCheckSend(BizChatID);
         }, 500);
+        if (lat == null || lat == undefined) {
+            lat = "";
+        }
+        if (lang == null || lang == undefined) {
+            lang = "";
+        }
+        if (CountryCode == null || CountryCode == undefined) {
+            CountryCode = "";
+        }
+        if (Ip == null || Ip == undefined) {
+            Ip = "";
+        }
         var img = $('.sendreque')[0].src;
         var aa = img.substring(img.length - 9, img.length);
         if (aa == "minus.png") {
@@ -197,7 +209,6 @@ jQuery(function ($) {
                 Ip = location.ip;
             }
         });
-
         if (JSON.parse(localStorage.getItem("StorageData")) != null) {
             IsContinue = true;
             Isopen = true;
@@ -219,6 +230,18 @@ jQuery(function ($) {
             setTimeout(function () {
                 chat.server.operatorCheckSend(BizChatID);
             }, 500);
+            if (lat == null || lat == undefined) {
+                lat = "";
+            }
+            if (lang == null || lang == undefined) {
+                lang = "";
+            }
+            if (CountryCode == null || CountryCode == undefined) {
+                CountryCode = "";
+            }
+            if (Ip == null || Ip == undefined) {
+                Ip = "";
+            }
             var name = $.trim($("#txtname").val());
             if (json.StartChat.AskforName != true) {
                 if (name == "") {
@@ -366,7 +389,7 @@ jQuery(function ($) {
         });
 
         $(document).on('click', '.like-img', function () {
-            $.connection.hub.start();
+            //$.connection.hub.start();
             setTimeout(function () {
                 if (this.id == "like") {
                     chat.server.closeChatSend(UserId, SignalID, true, BizChatID, ChatUserInfoID, VisitorId, "Like");
@@ -379,7 +402,7 @@ jQuery(function ($) {
             localStorage.removeItem("VisitorID");
             ChatUserInfoID = null;
             ChatData = null;
-
+            $('#chatmsgs').empty();
             setTimeout(function () {
                 if (IsOperatorAvailable) {
                     if (json.StartChat.AskforName == false && json.StartChat.AskforEmail == false && json.StartChat.AskforQuestion == false && json.StartChat.AskforDepartment == false) {
@@ -396,16 +419,16 @@ jQuery(function ($) {
                     $('#inchat').hide();
                     NoOperator(json);
                 }
-            }, 1500);
-            Isopen = false;
-            $("#name-box").hide();
-            $("#message-box").hide();
-            $("#close-box").hide();
-            $("#NoOp-box").hide();
-            $("#NoOpSendMail-box").hide();
-            $(".sendreque").attr('src', Url + '/Content/images/icon/plus.png');
-            $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
 
+                Isopen = false;
+                $("#name-box").hide();
+                $("#message-box").hide();
+                $("#close-box").hide();
+                $("#NoOp-box").hide();
+                $("#NoOpSendMail-box").hide();
+                $(".sendreque").attr('src', Url + '/Content/images/icon/plus.png');
+                $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+            }, 1500);
             if (!Isopen) {
                 Isopen = true;
                 $("#name-box").toggle('fast');
@@ -504,7 +527,7 @@ jQuery(function ($) {
             localStorage.removeItem("VisitorID");
             ChatUserInfoID = null;
             ChatData = null;
-            $.connection.hub.start();
+            $('#chatmsgs').empty();
             setTimeout(function () {
                 chat.server.operatorCheckSend(BizChatID);
             }, 500);
@@ -524,16 +547,16 @@ jQuery(function ($) {
                     $('#inchat').hide();
                     NoOperator(json);
                 }
-            }, 1500);
-            Isopen = false;
-            $("#name-box").hide();
-            $("#message-box").hide();
-            $("#close-box").hide();
-            $("#NoOp-box").hide();
-            $("#NoOpSendMail-box").hide();
-            $(".sendreque").attr('src', Url + '/Content/images/icon/plus.png');
-            $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
 
+                Isopen = false;
+                $("#name-box").hide();
+                $("#message-box").hide();
+                $("#close-box").hide();
+                $("#NoOp-box").hide();
+                $("#NoOpSendMail-box").hide();
+                $(".sendreque").attr('src', Url + '/Content/images/icon/plus.png');
+                $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+            }, 1500);
             if (!Isopen) {
                 Isopen = true;
                 $("#name-box").toggle('fast');
