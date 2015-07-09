@@ -1,14 +1,14 @@
 <?php
 /**
  * @package Biz_chat
- * @version 1.3
+ * @version 1.4
  */
 /*
 Plugin Name: BizChatBox
 Plugin URI: 
 Description: BizChatBox is packed with all the features you need to provide premium customer support. It is light weight, reliable, customizable and scalable chat widget. Gain your competitive advantage today.
 Author: BizChatBox
-Version: 1.3
+Version: 1.4
 Author URI: www.bizchatbox.com
 */
 
@@ -134,9 +134,13 @@ function Bizchatbox_script_style_load() {
 	wp_register_script('Bizchatbox_hubs', 'https://dashboard.bizchatbox.com/signalr/hubs', __FILE__,array());
     wp_enqueue_script('Bizchatbox_hubs');
 	
-	//Bizchat css 
+	//css 
 	wp_register_style( 'BizchatBox_style', plugins_url( '/stylesheet/BizChat.css', __FILE__ ));
 	wp_enqueue_style( 'BizchatBox_style' );
+	
+	//ChatTable Additional Stylesheet
+	wp_register_style( 'BiChatbox_chattable_style', plugins_url( '/stylesheet/BizchatpluginStyle.css', __FILE__ ));
+	wp_enqueue_style( 'BiChatbox_chattable_style' );
 } 
 add_action( 'wp_enqueue_scripts', 'Bizchatbox_script_style_load');
 
