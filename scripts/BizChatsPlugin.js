@@ -199,16 +199,19 @@ jQuery(function ($) {
 
     $.connection.hub.start().done(function () {
         jQuery.ajax({
-            url: 'https://freegeoip.net/json/',
-            type: 'POST',
-            dataType: 'jsonp',
-            success: function (location) {
-                lat = location.latitude;
-                lang = location.longitude;
-                CountryCode = location.country_code.toLowerCase();
-                Ip = location.ip;
+            url: 'https://geoip.maxmind.com/geoip/v2.1/city/me',
+            type: 'GET',
+            data: { 'username': '101108', 'password': 'sHciT4aFZzvw' },
+            success: function (geoipResponse) {
+                lat = geoipResponse.location.latitude;
+                lang = geoipResponse.location.longitude;
+                CountryCode = geoipResponse.country.iso_code.toLowerCase();
+                Ip = geoipResponse.traits.ip_address;
             }
         });
+
+
+
         if (JSON.parse(localStorage.getItem("StorageData")) != null) {
             IsContinue = true;
             Isopen = true;
