@@ -1,12 +1,12 @@
 === BizChatBox - Free Live Chat Plugin ===
 Contributors: BizChatBox
 Donate link: https://www.BizChatBox.com
-Tags: chat, livechat, live, live chat, bizchatbox, business chat, online chat, chat online, wordpress chat, customer support, live help, chat widget, customer help, chat widget, Free chat, free live chat
+Tags: chat, livechat, live, live chat, bizchatbox, business chat, online chat, chat online, wordpress chat, customer support, live help, chat widget, customer help, chat widget, Free chat, free live chat, plugin, widget
 Requires at least: 3.0.1
-Tested up to: 4.1.1
+Tested up to: 4.2.2
 Stable tag: trunk
 
-BizchatBox is a FREE live chat software that allows businesses to engage their customers in real time, from anywhere. Sign up and try it for free!
+BizchatBox is a 100% FREE live chat software that allows businesses to engage their customers in real time, from anywhere. No Servers Required. Complete hosted solution. Sign up and try it for free!
 
 == Description ==
 
