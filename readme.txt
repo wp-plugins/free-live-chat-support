@@ -6,7 +6,7 @@ Requires at least: 3.0.1
 Tested up to: 4.2.2
 Stable tag: trunk
 
-BizchatBox is a 100% FREE hosted live chat software that allows businesses to engage their customers in real time. No Servers Required. Try it for free!
+BizchatBox is a 100% FREE hosted live chat software that allows businesses to engage with their customers in real time. Try it for free!
 
 == Description ==
 
