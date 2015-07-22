@@ -1,14 +1,14 @@
 <?php
 /**
  * @package Biz_chat
- * @version 1.5
+ * @version 1.6
  */
 /*
 Plugin Name: BizChatBox
 Plugin URI: 
 Description: BizChatBox is packed with all the features you need to provide premium customer support. It is light weight, reliable, customizable and scalable chat widget. Gain your competitive advantage today.
 Author: BizChatBox
-Version: 1.5
+Version: 1.6
 Author URI: www.bizchatbox.com
 */
 
@@ -33,6 +33,8 @@ function BizChat_update() {
 	update_option('bizchat_code', $BizChatId);	
 }
 function load_custom_bizchat_admin_style() {
+	wp_enqueue_script('jquery-ui-dialog');
+	wp_enqueue_style('wp-jquery-ui-dialog');
 	wp_register_style( 'Bizchat_admin_style', plugins_url( '/stylesheet/bizchatStyles.css', __FILE__ ) );
 	wp_enqueue_style( 'Bizchat_admin_style' );
 }
@@ -53,44 +55,54 @@ function biz_chat_generateAcctPage(){
 				<p>
 				BizChatBox allows you to chat in real time with visitors to your WordPress site. Click the button below to get started by login to BizChatBox and selecting a chat widget!
 				</p>
-				The button will open a widget selector in an external page. Keep in mind that your BizChatBox account is separate from your WordPress account.
+				Keep in mind that your BizChatBox account is separate from your WordPress account.
 				<?php
 			} else {
 				?>
 				<h4>Your current chat widget is:</h4>
 				<h1 class="BizChatCurrentWidgetName"><?php echo get_option('bizchat_widget_name'); ?></h1>
-				<p>
-				Would you like to switch widgets?
-				</p>
 				<?php
 			}
 			?>
 		</div>
+		<div id="dialog" >
+			<iframe id="dataframe" style="display: block;height: 500px;width: 800px;" src=""></iframe>
+		</div>
 		<form>
-			<input type="button" class="bizchatbutton" value="Pick a widget!" onclick="openBizChatChildWindow()">
+			<input type="button" class="bizchatbutton" value="Setup your chat widget" onclick="openBizChatChildWindow()">
 		</form>		
 	</div>
 	</p>
 	<script>
-		var WidgetId = localStorage.getItem("WidgetId");
-		var BizChatId = localStorage.getItem("BizChatId");
-		var WidgetName = localStorage.getItem("WidgetName");
-		
+		jQuery(function ($) {
+				$( "#dialog" ).dialog({ 
+					height: 'auto',
+					title: 'BizChatBox Chat Widget Setup',
+					modal: true,
+					width: 'auto',
+					autoResize: true,
+					autoOpen: false,
+					draggable: false
+				});
+			});
+			
 		var BizChatChildWindow;
 		function openBizChatChildWindow() {
-		var data = localStorage.getItem("LoginData");
-			if (data) {
-				window.open('<?php echo $bizchatHome;?>Plugin/remotelogin.html');
-			}
-			else{
-				BizChatChildWindow = window.open('<?php echo $bizchatHome;?>Plugin/pagechoicewordpress.html');
-			}				
+			var iframe = document.getElementById("dataframe");
+			iframe.src = "<?php echo $bizchatHome;?>Plugin/pagechoicewordpress_new.html";
+			
+			jQuery(function ($) {
+				$( "#dialog" ).dialog( "open" );
+			});		
 		}
+		
 		window.onmessage = function (e) {
 			var url = ajaxurl;
+			
 			var widgetIdToPass = e.data.WidgetId;
 			var BizchatIdToPass = e.data.BizChatId;
 			var widgetNameToPass = e.data.WidgetName;
+			
 			
 			//wp-ajax call
 			var data = {
