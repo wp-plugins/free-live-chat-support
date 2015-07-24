@@ -16,6 +16,8 @@ Website : www.bizchatbox.com
 
 Demo : https://www.youtube.com/watch?v=p1_AZzc4Rqo
 
+Installation: https://www.youtube.com/watch?v=sq5rHwvYv8Q
+
 
 100 % Free
 
