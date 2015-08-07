@@ -39,13 +39,14 @@ var Key;
 var InChatData;
 var Department = "0";
 var DepartmentVisible = false;
+var IsSendRequest = true;
 
 jQuery(function ($) {
     Key = Math.floor((Math.random() * 10000) + 1);
 
     //#region for HTML --------------------------------------------------------
 
-    $('body').append('<div class="animate chatwindow"><div id="startchat" class="chatwindow"><img id="top-img" class="chat-img" src="" style="display:none !important;" /><table class="chattable"><tr class="chattableraw"><td id="starthead" class="hedertext"></td><td class="hederbtn"><a href="#" style="padding-left: 5px;"><img id="minimize" class="btnimg btnmini" src="' + Url + '/Content/images/icon/plus.png" alt="' + Url + '/Content/images/icon/plus.png" /></a></td></tr><tr id="name-box"><td colspan="2" style="padding:0;"><div class="name-messages"><h4 style="margin-left: 20px;margin-top: 10px;font-family:Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif !important;" id="lblintro"></h4><input id="txtname" class="nameinput" style="" /><input id="txtemails" class="nameinput" /><select class="nameinput DrpDepartment" style="height: 28px;width: 87%;"></select><label id="lblmsg" style="margin-left: 6%;font-weight: bold;">Message</label><textarea id="txtquestion" class="quesinput"></textarea><center><button class="btnsendreq" id="SendRequest"><a id="sendreqtext" href="#" style="text-decoration:none;color:white;"></a></button></center><div style="display: block; width: 100% !important; font-size: 10px !important;padding-top: 10px; margin-bottom: 10px !important; text-align: center !important;"><span style="font-size: 12px !important;">Powered by </span><a target="_blank" href="http://www.bizchatbox.com/" style="font-family:Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif !important;font-size: 12px !important; text-decoration: underline !important;">BizChatBox.com</a></div></div></td></tr></table><img id="bottom-img" class="chat-img" src="" style="display:none !important;" /></div><div id="Nooperator" class="chatwindow"><table class="chattable"><tr class="chattableraw"><td id="noophead" class="hedertext"></td><td class="hederbtn"><a href="#" style="padding-left: 5px;"><img id="maxmizes" class="btnimg btnmini" src="' + Url + '/Content/images/icon/plus.png" alt="' + Url + '/Content/images/icon/plus.png" /></a></td></tr><tr id="NoOp-box"><td colspan="2" style="padding:0;"><div class="name-messages" style="padding:5px;"><label id="lblemailintro"></label><p></p><input id="noopname" class="nameinput" placeholder="Name" /><input id="noopemails" class="nameinput" placeholder="Email"/><textarea id="noopquestion" class="quesinput" placeholder="What can we help with?"></textarea><center><button id="btnsendemail"><a id="sendnooptext" href="#" style="text-decoration:none;color:white;"></a></button></center><div style="display: block; width: 100% !important; font-size: 10px !important;padding-top: 10px; margin-bottom: 10px !important; text-align: center !important;"><span style="font-size: 12px !important;">Powered by </span><a target="_blank" href="http://www.bizchatbox.com/" style="font-family:Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif !important;font-size: 12px !important; text-decoration: underline !important;">BizChatBox.com</a></div></div></td></tr></table></div><div id="NooperatorSent" class="chatwindow"><table class="chattable"><tr class="chattableraw"><td id="noopsenthead" class="hedertext">No Operators Available</td><td id="Nooprefresh" class="hederbtn"><a href="#"><img id="refreshSendMail" style="width: 32px;" class="btnimg" src="' + Url + '/Content/images/icon/refresh.png" alt="' + Url + '/Content/images/icon/refresh.png" /></a></td><td class="hederbtn"><a href="#" style="padding-left: 4px;"><img id="" class="btnimg btnmini" src="' + Url + '/Content/images/icon/plus.png" alt="' + Url + '/Content/images/icon/plus.png" /></a></td></tr><tr id="NoOpSendMail-box"><td colspan="3" style="padding:0;"><div class="name-messages" style="height: 75px;padding:10px;"><label id="lblemailSent">email is sent and should go back to the initial page waiting for new chat sessions.</label></div></td></tr></table></div><div id="inchat" class="chatwindow"><table class="chattable"><tr class="chattableraw"><td id="inchathead" class="sendreq">Welcome to LiveChat</td><td class="hederbtn"><a href="#" style="padding-left: 4px;"><img class="btnimg sendreque sendreq" src="' + Url + '/Content/images/icon/plus.png" alt="' + Url + '/Content/images/icon/plus.png" /></a></td><td class="hederbtn"><a href="#" style="padding-left:6px;"><img id="btnclosechat" style="width: 15px;" class="btnimg" src="' + Url + '/Content/images/icon/close.png" alt="' + Url + '/Content/images/icon/close.png" /></a></td></tr><tr id="message-box"><td colspan="3" style="padding:0;"><div id="operatorimgdiv" class="name-messages" style="height: 56px;overflow: hidden;border-bottom: 5px solid #dcdcdc;"><div style="width:78%; float:left;"><div style="float:left;margin-right:4px;"><img id="operatorprofileimg" style="height: 52px;width: 52px;border-radius: 26px;border: 1px solid;" src="' + Url + '/Content/image/customer_support-128.png" alt="" /></div><div style="float:left;"><div id="operatorname" style="font-size: 20px;font-weight: bold;line-height: 1.5em;"></div><div id="operatorrole" style="font-size:14px;"></div></div></div><div style="width:18%;float: right;margin-top: 5%;margin-right: 2%;"><div style="float:right;"><a href="#"><img class="chatlike chatlikes" id="chatlikes" style="margin-top: 4%;" src="' + Url + '/Content/images/small-like-icon.png" alt="' + Url + '/Content/images/small-like-icon.png" /></a>&nbsp;|&nbsp;<a href="#"><img class="chatlike chatdislikes" id="chatdislikes" src="' + Url + '/Content/images/small-dislike-icon.png" alt="' + Url + '/Content/images/small-dislike-icon.png" /></a><a style="display:none;" href="#"><img src="' + Url + '/Content/images/icon/mail-icon.png" alt="' + Url + '/Content/images/icon/mail-icon.png" /></a></div></div></div><div id="defchat" class="name-messages" style="min-height: 2px;"></div><div id="conchat" class="name-messages" style="min-height: 270px;max-height: 270px; border-bottom: white;border-top: none; word-break: break-all;overflow-y: auto;"><div class="messages"><div id="chatmsgs"></div></div></div><div id="imgtyping" class="name-messages" style="border-top: white;"></div><div class="name-messages sendmess" style="border-top-width:5px;"><textarea id="sendmsgtext" class="messinput" rows="3" placeholder="Type and press[enter]" style="float: left;width: 84%;"></textarea><a href="javascript:void(0)"><img id="MessageSend" src="' + Url + '/Content/image/arrow-right-01-20.png" alt="" style="margin-top: 8%;float:left;" /></a><div style="display: block;margin-top: 85px; width: 100% !important;margin-bottom: 10px !important; text-align: center !important;"><span style="font-size: 12px !important;">Powered by </span><a target="_blank" href="http://www.bizchatbox.com/" style="font-family:Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif !important;font-size: 12px !important; text-decoration: underline !important;">BizChatBox.com</a></div></div></td></tr></table></div><div id="closechat" class="chatwindow"><table class="chattable"><tr class="chattableraw"><td id="closehead" class="hedertext"></td><td id="clschatrefresh" class="hederbtn"><a href="#"><img id="refreshafterchats" style="width: 32px;height: 32px;" class="btnimg refreshclschats" src="' + Url + '/Content/images/icon/refresh.png" alt="' + Url + '/Content/images/icon/refresh.png" /></a></td><td class="hederbtn"><a href="#" style="padding-left: 4px;"><img style="margin-bottom: 1px;" class="btnimg btnmini" src="' + Url + '/Content/images/icon/plus.png" alt="' + Url + '/Content/images/icon/plus.png" /></a></td></tr><tr id="close-box"><td colspan="3" style="padding:0;"><div class="name-messages"><p style="text-align:center;">Thanks for chatting.</p><p class="clschatmsg"></p><br /><a href="#"><img class="like-img" id="like" src="' + Url + '/Content/images/like.png" alt="" style="margin-left: 35%;" /><img style="margin-left: 7%;" class="like-img" id="dislike" src="' + Url + '/Content/images/dislike.png" alt="" /></a><br /><br /><p style="text-align: center; padding: 0px;"><a class="likechatdwld" style="font-family:Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif !important;" href="#"></a></p><br /><div style="display: block; width: 100% !important; font-size: 10px !important; padding-top: 10px; margin-bottom: 10px !important; text-align: center !important;"><span style="font-size: 12px !important;">Powered by </span><a target="_blank" href="http://www.bizchatbox.com/" style="font-family:Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif !important;font-size: 12px !important; text-decoration: underline !important;">BizChatBox.com</a></div></div></td></tr></table></div></div>');
+    $('body').append('<div class="animate chatwindow"><div id="startchat" class="chatwindow"><img class="chat-img top-img" src="" style="display:none !important;" /><table class="chattable"><tr class="chattableraw"><td id="starthead" class="hedertext"></td><td class="hederbtn"><a href="#" style="padding-left: 5px;" class="minimizebtn"><img id="minimize" class="btnimg btnmini" src="' + Url + '/Content/images/icon/plus.png" alt="' + Url + '/Content/images/icon/plus.png" /></a></td></tr><tr id="name-box"><td colspan="2" style="padding:0;"><div class="name-messages"><h4 class="BizchatBox_TitleInfo" id="lblintro"></h4><input id="txtname" class="nameinput" style="" /><input id="txtemails" class="nameinput" /><select class="nameinput DrpDepartment" style="height: 28px;width: 87%;"></select><label id="lblmsg" style="margin-left: 6%;font-weight: bold;">Message</label><textarea id="txtquestion" class="quesinput"></textarea><center><button class="btnsendreq" id="SendRequest"><a id="sendreqtext" href="#" style="text-decoration:none;color:white;"></a></button></center><div style="display: block; width: 100% !important; font-size: 10px !important;padding-top: 10px; margin-bottom: 10px !important; text-align: center !important;"><span style="font-size: 12px !important;">Powered by </span><a target="_blank" href="http://www.bizchatbox.com/" style="font-family:Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif !important;font-size: 12px !important; text-decoration: underline !important;">BizChatBox.com</a></div></div></td></tr></table><img class="chat-img bottom-img" src="" style="display:none !important;" /><div id="spinnerRegion" class="global-spinner" style="display: none;"><div class="spinner-loader"></div></div></div><div id="Nooperator" class="chatwindow"><img class="chat-img top-img" src="" style="display:none !important;" /><table class="chattable"><tr class="chattableraw"><td id="noophead" class="hedertext"></td><td class="hederbtn"><a href="#" style="padding-left: 5px;" class="minimizebtn"><img id="maxmizes" class="btnimg btnmini" src="' + Url + '/Content/images/icon/plus.png" alt="' + Url + '/Content/images/icon/plus.png" /></a></td></tr><tr id="NoOp-box"><td colspan="2" style="padding:0;"><div class="name-messages" style="padding:5px;"><label id="lblemailintro"></label><p></p><input id="noopname" class="nameinput" placeholder="Name" /><input id="noopemails" class="nameinput" placeholder="Email"/><textarea id="noopquestion" class="quesinput" placeholder="What can we help with?"></textarea><center><button id="btnsendemail"><a id="sendnooptext" href="#" style="text-decoration:none;color:white;"></a></button></center><div style="display: block; width: 100% !important; font-size: 10px !important;padding-top: 10px; margin-bottom: 10px !important; text-align: center !important;"><span style="font-size: 12px !important;">Powered by </span><a target="_blank" href="http://www.bizchatbox.com/" style="font-family:Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif !important;font-size: 12px !important; text-decoration: underline !important;">BizChatBox.com</a></div></div></td></tr></table><img class="chat-img bottom-img" src="" style="display:none !important;" /></div><div id="NooperatorSent" class="chatwindow"><img class="chat-img top-img" src="" style="display:none !important;" /><table class="chattable"><tr class="chattableraw"><td id="noopsenthead" class="hedertext">No Operators Available</td><td id="Nooprefresh" class="hederbtn"><a href="#"><img id="refreshSendMail" style="width: 32px;" class="btnimg" src="' + Url + '/Content/images/icon/refresh.png" alt="' + Url + '/Content/images/icon/refresh.png" /></a></td><td class="hederbtn"><a href="#" style="padding-left: 4px;" class="minimizebtn"><img id="" class="btnimg btnmini" src="' + Url + '/Content/images/icon/plus.png" alt="' + Url + '/Content/images/icon/plus.png" /></a></td></tr><tr id="NoOpSendMail-box"><td colspan="3" style="padding:0;"><div class="name-messages" style="height: 75px;padding:10px;"><label id="lblemailSent">email is sent and should go back to the initial page waiting for new chat sessions.</label></div></td></tr></table><img class="chat-img bottom-img" src="" style="display:none !important;" /></div><div id="inchat" class="chatwindow"><img class="chat-img top-img" src="" style="display:none !important;" /><table class="chattable"><tr class="chattableraw"><td id="inchathead" class="sendreq sendreqbtn">Welcome to LiveChat</td><td class="hederbtn"><a href="#" style="padding-left: 4px;" class="sendreqbtn"><img class="btnimg sendreque sendreq" src="' + Url + '/Content/images/icon/plus.png" alt="' + Url + '/Content/images/icon/plus.png" /></a></td><td class="hederbtn"><a href="#" style="padding-left:6px;"><img id="btnclosechat" style="width: 15px;" class="btnimg" src="' + Url + '/Content/images/icon/close.png" alt="' + Url + '/Content/images/icon/close.png" /></a></td></tr><tr id="message-box"><td colspan="3" style="padding:0;"><div id="operatorimgdiv" class="name-messages" style="height: 56px;overflow: hidden;border-bottom: 5px solid #dcdcdc;"><div style="width:78%; float:left;"><div style="float:left;margin-right:4px;"><img id="operatorprofileimg" style="height: 52px;width: 52px;border-radius: 26px;border: 1px solid;" src="' + Url + '/Content/image/customer_support-128.png" alt="" /></div><div style="float:left;"><div id="operatorname" style="font-size: 20px;font-weight: bold;line-height: 1.5em;"></div><div id="operatorrole" style="font-size:14px;"></div></div></div><div style="width:18%;float: right;margin-top: 5%;margin-right: 2%;"><div style="float:right;"><a href="#"><img class="chatlike chatlikes" id="chatlikes" style="margin-top: 4%;" src="' + Url + '/Content/images/small-like-icon.png" alt="' + Url + '/Content/images/small-like-icon.png" /></a>&nbsp;|&nbsp;<a href="#"><img class="chatlike chatdislikes" id="chatdislikes" src="' + Url + '/Content/images/small-dislike-icon.png" alt="' + Url + '/Content/images/small-dislike-icon.png" /></a><a style="display:none;" href="#"><img src="' + Url + '/Content/images/icon/mail-icon.png" alt="' + Url + '/Content/images/icon/mail-icon.png" /></a></div></div></div><div id="defchat" class="name-messages" style="min-height: 2px;"></div><div id="conchat" class="name-messages" style="min-height: 270px;max-height: 270px; border-bottom: white;border-top: none; word-break: break-all;overflow-y: auto;"><div class="messages"><div id="chatmsgs"></div></div></div><div id="imgtyping" class="name-messages" style="border-top: white;"></div><div class="name-messages sendmess" style="border-top-width:5px;"><textarea id="sendmsgtext" class="messinput" rows="3" placeholder="Type and press[enter]" style="float: left;width: 82%;"></textarea><a href="javascript:void(0)"><img id="MessageSend" src="' + Url + '/Content/image/arrow-right-01-20.png" alt="" style="margin-top: 8%;float:left;" /></a><div style="display: block;margin-top: 85px; width: 100% !important;margin-bottom: 10px !important; text-align: center !important;"><span style="font-size: 12px !important;">Powered by </span><a target="_blank" href="http://www.bizchatbox.com/" style="font-family:Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif !important;font-size: 12px !important; text-decoration: underline !important;">BizChatBox.com</a></div></div></td></tr></table><img class="chat-img bottom-img" src="" style="display:none !important;" /></div><div id="closechat" class="chatwindow"><img class="chat-img top-img" src="" style="display:none !important;" /><table class="chattable"><tr class="chattableraw"><td id="closehead" class="hedertext"></td><td id="clschatrefresh" class="hederbtn"><a href="#"><img id="refreshafterchats" style="width: 32px;height: 32px;" class="btnimg refreshclschats" src="' + Url + '/Content/images/icon/refresh.png" alt="' + Url + '/Content/images/icon/refresh.png" /></a></td><td class="hederbtn"><a href="#" style="padding-left: 4px;" class="minimizebtn"><img style="margin-bottom: 1px;" class="btnimg btnmini" src="' + Url + '/Content/images/icon/plus.png" alt="' + Url + '/Content/images/icon/plus.png" /></a></td></tr><tr id="close-box"><td colspan="3" style="padding:0;"><div class="name-messages"><p style="text-align:center;">Thanks for chatting.</p><p class="clschatmsg"></p><br /><a href="#"><img class="like-img" id="like" src="' + Url + '/Content/images/like.png" alt="" style="margin-left: 35%;" /><img style="margin-left: 7%;" class="like-img" id="dislike" src="' + Url + '/Content/images/dislike.png" alt="" /></a><br /><br /><br /><div style="display: block; width: 100% !important; font-size: 10px !important; padding-top: 10px; margin-bottom: 10px !important; text-align: center !important;"><span style="font-size: 12px !important;">Powered by </span><a target="_blank" href="http://www.bizchatbox.com/" style="font-family:Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif !important;font-size: 12px !important; text-decoration: underline !important;">BizChatBox.com</a></div></div></td></tr></table><img class="chat-img bottom-img" src="" style="display:none !important;" /></div><div id="spinnerRegion" class="global-spinner" style="display: none;"><div class="spinner-loader" style="top: 45%; left: 49%;"></div></div></div>');
 
     //#endregion --------------------------------------------------------------
 
@@ -69,12 +70,10 @@ jQuery(function ($) {
         }
     });
 
-    $(document).on('click', '.sendreq', function () {
+    $(document).on('click', '.sendreqbtn', function () {
         IsOperatorAvailable = false;
-        $.connection.hub.start();
-        setTimeout(function () {
-            chat.server.operatorCheckSend(BizChatID);
-        }, 500);
+        chat.server.operatorCheckSend(BizChatID);
+
         if (lat == null || lat == undefined) {
             lat = "";
         }
@@ -89,29 +88,333 @@ jQuery(function ($) {
         }
         var img = $('.sendreque')[0].src;
         var aa = img.substring(img.length - 9, img.length);
-        if (aa == "minus.png") {
-            $(".sendreque").attr('src', Url + '/Content/images/icon/plus.png');
-            $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
-            Isopen = false;
-        }
-        else {
-            $(".sendreque").attr('src', Url + '/Content/images/icon/minus.png');
-            $(".btnmini").attr('src', Url + '/Content/images/icon/minus.png');
-            Isopen = true;
-            SignalID = chat.connection.id;
-            VisitorName = "anonymous";
-            WidgetName = json.WidgetsName;
-            setTimeout(function () {
-                if (IsOperatorAvailable) {
-                    if (ChatUserInfoID == "" || ChatUserInfoID == null) {
-                        InChat(InChatData, "anonymous");
-                        chat.server.requestFromVisitor(UserId, BizChatID, WidgetID, WidgetName, SignalID, "anonymous", "", "", "anonymous " + json.InChat.JoinedChat, Ip, newURL, lat, lang, "0", CountryCode);
-                    }
-                } else {
-                    $('#inchat').hide();
-                    NoOperator(json);
+        if (json.Collapse.Position == "Bottom Left" || json.Collapse.Position == "Bottom Right") {
+            if (json.Collapse.Type == "Image") {
+                if (aa == "minus.png") {
+                    $(".sendreque").attr('src', Url + '/Content/images/icon/plus.png');
+                    $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                    Isopen = false;
+                    $(".chattable").hide();
+                    $('.top-img').show();
                 }
-            }, 2000);
+                else {
+                    $(".sendreque").attr('src', Url + '/Content/images/icon/minus.png');
+                    $(".btnmini").attr('src', Url + '/Content/images/icon/minus.png');
+                    Isopen = true;
+                    $(".chattable").show();
+                    $('.top-img').hide();
+                    if (IsSendRequest) {
+                        IsSendRequest = false;
+                        SignalID = chat.connection.id;
+                        VisitorName = "anonymous";
+                        WidgetName = json.WidgetsName;
+                        setTimeout(function () {
+                            if (IsOperatorAvailable) {
+                                if (ChatUserInfoID == "" || ChatUserInfoID == null) {
+                                    $('#spinnerRegion').show();
+                                    jQuery.get(Url + "/Plugin/get_visitor_info.php", function (data) {
+                                        var location = JSON.parse(data);
+                                        lat = location.latitude;
+                                        lang = location.longitude;
+                                        CountryCode = location.country_code.toLowerCase();
+                                        Ip = location.ip;
+                                        //hide spinner
+                                        $('#spinnerRegion').hide();
+                                        InChat(InChatData, "anonymous");
+                                        chat.server.requestFromVisitor(UserId, BizChatID, WidgetID, WidgetName, SignalID, "anonymous", "", "", "anonymous " + json.InChat.JoinedChat, Ip, newURL, lat, lang, "0", CountryCode);
+                                    });
+                                }
+                            } else {
+                                $('#inchat').hide();
+                                NoOperator(json);
+                            }
+                        }, 3000);
+                    }
+                }
+            } else if (json.Collapse.Type == "Image and Tab") {
+                if (aa == "minus.png") {
+                    $(".sendreque").attr('src', Url + '/Content/images/icon/plus.png');
+                    $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                    Isopen = false;
+                    $('.top-img').show();
+                }
+                else {
+                    $(".sendreque").attr('src', Url + '/Content/images/icon/minus.png');
+                    $(".btnmini").attr('src', Url + '/Content/images/icon/minus.png');
+                    Isopen = true;
+                    $('.top-img').hide();
+                    if (IsSendRequest) {
+                        IsSendRequest = false;
+                        SignalID = chat.connection.id;
+                        VisitorName = "anonymous";
+                        WidgetName = json.WidgetsName;
+                        setTimeout(function () {
+                            if (IsOperatorAvailable) {
+                                if (ChatUserInfoID == "" || ChatUserInfoID == null) {
+                                    $('#spinnerRegion').show();
+                                    jQuery.get(Url + "/Plugin/get_visitor_info.php", function (data) {
+                                        var location = JSON.parse(data);
+                                        lat = location.latitude;
+                                        lang = location.longitude;
+                                        CountryCode = location.country_code.toLowerCase();
+                                        Ip = location.ip;
+                                        //hide spinner
+                                        $('#spinnerRegion').hide();
+                                        InChat(InChatData, "anonymous");
+                                        chat.server.requestFromVisitor(UserId, BizChatID, WidgetID, WidgetName, SignalID, "anonymous", "", "", "anonymous " + json.InChat.JoinedChat, Ip, newURL, lat, lang, "0", CountryCode);
+                                    });
+                                }
+                            } else {
+                                $('#inchat').hide();
+                                NoOperator(json);
+                            }
+                        }, 3000);
+                    }
+                }
+            } else {
+                if (aa == "minus.png") {
+                    $(".sendreque").attr('src', Url + '/Content/images/icon/plus.png');
+                    $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                    Isopen = false;
+                }
+                else {
+                    $(".sendreque").attr('src', Url + '/Content/images/icon/minus.png');
+                    $(".btnmini").attr('src', Url + '/Content/images/icon/minus.png');
+                    Isopen = true;
+                    if (IsSendRequest) {
+                        IsSendRequest = false;
+                        SignalID = chat.connection.id;
+                        VisitorName = "anonymous";
+                        WidgetName = json.WidgetsName;
+                        setTimeout(function () {
+                            if (IsOperatorAvailable) {
+                                if (ChatUserInfoID == "" || ChatUserInfoID == null) {
+                                    $('#spinnerRegion').show();
+                                    jQuery.get(Url + "/Plugin/get_visitor_info.php", function (data) {
+                                        var location = JSON.parse(data);
+                                        lat = location.latitude;
+                                        lang = location.longitude;
+                                        CountryCode = location.country_code.toLowerCase();
+                                        Ip = location.ip;
+                                        //hide spinner
+                                        $('#spinnerRegion').hide();
+                                        InChat(InChatData, "anonymous");
+                                        chat.server.requestFromVisitor(UserId, BizChatID, WidgetID, WidgetName, SignalID, "anonymous", "", "", "anonymous " + json.InChat.JoinedChat, Ip, newURL, lat, lang, "0", CountryCode);
+                                    });
+                                }
+                            } else {
+                                $('#inchat').hide();
+                                NoOperator(json);
+                            }
+                        }, 3000);
+                    }
+                }
+            }
+        } else {
+            if (json.Collapse.Type == "Image") {
+                if (aa == "minus.png") {
+                    $(".sendreque").attr('src', Url + '/Content/images/icon/plus.png');
+                    $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                    Isopen = false;
+                    $(".chattable").hide();
+                    $('.bottom-img').show();
+                }
+                else {
+                    $(".sendreque").attr('src', Url + '/Content/images/icon/minus.png');
+                    $(".btnmini").attr('src', Url + '/Content/images/icon/minus.png');
+                    Isopen = true;
+                    $(".chattable").show();
+                    $('.bottom-img').hide();
+                    if (IsSendRequest) {
+                        IsSendRequest = false;
+                        SignalID = chat.connection.id;
+                        VisitorName = "anonymous";
+                        WidgetName = json.WidgetsName;
+                        setTimeout(function () {
+                            if (IsOperatorAvailable) {
+                                if (ChatUserInfoID == "" || ChatUserInfoID == null) {
+                                    $('#spinnerRegion').show();
+                                    jQuery.get(Url + "/Plugin/get_visitor_info.php", function (data) {
+                                        var location = JSON.parse(data);
+                                        lat = location.latitude;
+                                        lang = location.longitude;
+                                        CountryCode = location.country_code.toLowerCase();
+                                        Ip = location.ip;
+                                        //hide spinner
+                                        $('#spinnerRegion').hide();
+                                        InChat(InChatData, "anonymous");
+                                        chat.server.requestFromVisitor(UserId, BizChatID, WidgetID, WidgetName, SignalID, "anonymous", "", "", "anonymous " + json.InChat.JoinedChat, Ip, newURL, lat, lang, "0", CountryCode);
+                                    });
+                                }
+                            } else {
+                                $('#inchat').hide();
+                                NoOperator(json);
+                            }
+                        }, 3000);
+                    }
+                }
+            } else if (json.Collapse.Type == "Image and Tab") {
+                if (aa == "minus.png") {
+                    $(".sendreque").attr('src', Url + '/Content/images/icon/plus.png');
+                    $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                    Isopen = false;
+                    $('.bottom-img').show();
+                }
+                else {
+                    $(".sendreque").attr('src', Url + '/Content/images/icon/minus.png');
+                    $(".btnmini").attr('src', Url + '/Content/images/icon/minus.png');
+                    Isopen = true;
+                    $('.bottom-img').hide();
+                    if (IsSendRequest) {
+                        IsSendRequest = false;
+                        SignalID = chat.connection.id;
+                        VisitorName = "anonymous";
+                        WidgetName = json.WidgetsName;
+                        setTimeout(function () {
+                            if (IsOperatorAvailable) {
+                                if (ChatUserInfoID == "" || ChatUserInfoID == null) {
+                                    $('#spinnerRegion').show();
+                                    jQuery.get(Url + "/Plugin/get_visitor_info.php", function (data) {
+                                        var location = JSON.parse(data);
+                                        lat = location.latitude;
+                                        lang = location.longitude;
+                                        CountryCode = location.country_code.toLowerCase();
+                                        Ip = location.ip;
+                                        //hide spinner
+                                        $('#spinnerRegion').hide();
+                                        InChat(InChatData, "anonymous");
+                                        chat.server.requestFromVisitor(UserId, BizChatID, WidgetID, WidgetName, SignalID, "anonymous", "", "", "anonymous " + json.InChat.JoinedChat, Ip, newURL, lat, lang, "0", CountryCode);
+                                    });
+                                }
+                            } else {
+                                $('#inchat').hide();
+                                NoOperator(json);
+                            }
+                        }, 3000);
+                    }
+                }
+            } else {
+                if (aa == "minus.png") {
+                    $(".sendreque").attr('src', Url + '/Content/images/icon/plus.png');
+                    $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                    Isopen = false;
+                }
+                else {
+                    $(".sendreque").attr('src', Url + '/Content/images/icon/minus.png');
+                    $(".btnmini").attr('src', Url + '/Content/images/icon/minus.png');
+                    Isopen = true;
+                    if (IsSendRequest) {
+                        IsSendRequest = false;
+                        SignalID = chat.connection.id;
+                        VisitorName = "anonymous";
+                        WidgetName = json.WidgetsName;
+                        setTimeout(function () {
+                            if (IsOperatorAvailable) {
+                                if (ChatUserInfoID == "" || ChatUserInfoID == null) {
+                                    $('#spinnerRegion').show();
+                                    jQuery.get(Url + "/Plugin/get_visitor_info.php", function (data) {
+                                        var location = JSON.parse(data);
+                                        lat = location.latitude;
+                                        lang = location.longitude;
+                                        CountryCode = location.country_code.toLowerCase();
+                                        Ip = location.ip;
+                                        //hide spinner
+                                        $('#spinnerRegion').hide();
+                                        InChat(InChatData, "anonymous");
+                                        chat.server.requestFromVisitor(UserId, BizChatID, WidgetID, WidgetName, SignalID, "anonymous", "", "", "anonymous " + json.InChat.JoinedChat, Ip, newURL, lat, lang, "0", CountryCode);
+                                    });
+                                }
+                            } else {
+                                $('#inchat').hide();
+                                NoOperator(json);
+                            }
+                        }, 3000);
+                    }
+                }
+            }
+        }
+
+        $("#name-box").toggle('fast');
+        $("#message-box").toggle('fast');
+        $("#close-box").toggle('fast');
+        $("#NoOp-box").toggle('fast');
+        $("#NoOpSendMail-box").toggle('fast');
+    });
+
+    $(document).on('click', '.minimizebtn', function () {
+        $('#spinnerRegion').hide();
+        var img = $('.btnmini')[0].src;
+        var aa = img.substring(img.length - 9, img.length);
+        if (json.Collapse.Position == "Bottom Left" || json.Collapse.Position == "Bottom Right") {
+            if (json.Collapse.Type == "Image") {
+                if (aa == "minus.png") {
+                    $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                    Isopen = false;
+                    $(".chattable").hide();
+                    $('.top-img').show();
+                }
+                else {
+                    $(".btnmini").attr('src', Url + '/Content/images/icon/minus.png');
+                    Isopen = true;
+                    $(".chattable").show();
+                    $('.top-img').hide();
+                }
+            } else if (json.Collapse.Type == "Image and Tab") {
+                if (aa == "minus.png") {
+                    $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                    Isopen = false;
+                    $('.top-img').show();
+                }
+                else {
+                    $(".btnmini").attr('src', Url + '/Content/images/icon/minus.png');
+                    Isopen = true;
+                    $('.top-img').hide();
+                }
+            } else {
+                if (aa == "minus.png") {
+                    $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                    Isopen = false;
+                }
+                else {
+                    $(".btnmini").attr('src', Url + '/Content/images/icon/minus.png');
+                    Isopen = true;
+                }
+            }
+        } else {
+            if (json.Collapse.Type == "Image") {
+                if (aa == "minus.png") {
+                    $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                    Isopen = false;
+                    $(".chattable").hide();
+                    $('.bottom-img').show();
+                }
+                else {
+                    $(".btnmini").attr('src', Url + '/Content/images/icon/minus.png');
+                    Isopen = true;
+                    $(".chattable").show();
+                    $('.bottom-img').hide();
+                }
+            } else if (json.Collapse.Type == "Image and Tab") {
+                if (aa == "minus.png") {
+                    $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                    Isopen = false;
+                    $('.bottom-img').show();
+                }
+                else {
+                    $(".btnmini").attr('src', Url + '/Content/images/icon/minus.png');
+                    Isopen = true;
+                    $('.bottom-img').hide();
+                }
+            } else {
+                if (aa == "minus.png") {
+                    $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                    Isopen = false;
+                }
+                else {
+                    $(".btnmini").attr('src', Url + '/Content/images/icon/minus.png');
+                    Isopen = true;
+                }
+            }
         }
         $("#name-box").toggle('fast');
         $("#message-box").toggle('fast');
@@ -120,16 +423,306 @@ jQuery(function ($) {
         $("#NoOpSendMail-box").toggle('fast');
     });
 
-    $(document).on('click', '.btnmini', function () {
+    $(document).on('click', '.top-img', function () {
+        IsOperatorAvailable = false;
+        chat.server.operatorCheckSend(BizChatID);
+
+        if (lat == null || lat == undefined) {
+            lat = "";
+        }
+        if (lang == null || lang == undefined) {
+            lang = "";
+        }
+        if (CountryCode == null || CountryCode == undefined) {
+            CountryCode = "";
+        }
+        if (Ip == null || Ip == undefined) {
+            Ip = "";
+        }
         var img = $('.btnmini')[0].src;
         var aa = img.substring(img.length - 9, img.length);
-        if (aa == "minus.png") {
-            $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
-            Isopen = false;
+        if (json.Collapse.Position == "Bottom Left" || json.Collapse.Position == "Bottom Right") {
+            if (json.Collapse.Type == "Image") {
+                if (aa == "minus.png") {
+                    $(".sendreque").attr('src', Url + '/Content/images/icon/plus.png');
+                    $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                    Isopen = false;
+                    $(".chattable").hide();
+                    $('.top-img').show();
+                }
+                else {
+                    $(".sendreque").attr('src', Url + '/Content/images/icon/minus.png');
+                    $(".btnmini").attr('src', Url + '/Content/images/icon/minus.png');
+                    Isopen = true;
+                    $(".chattable").show();
+                    $('.top-img').hide();
+                    if (json.StartChat.AskforName == false && json.StartChat.AskforEmail == false && json.StartChat.AskforQuestion == false && json.StartChat.AskforDepartment == false) {
+                        if (IsSendRequest) {
+                            IsSendRequest = false;
+                            SignalID = chat.connection.id;
+                            VisitorName = "anonymous";
+                            WidgetName = json.WidgetsName;
+                            setTimeout(function () {
+                                if (IsOperatorAvailable) {
+                                    if (ChatUserInfoID == "" || ChatUserInfoID == null) {
+                                        $('#spinnerRegion').show();
+                                        jQuery.get(Url + "/Plugin/get_visitor_info.php", function (data) {
+                                            var location = JSON.parse(data);
+                                            lat = location.latitude;
+                                            lang = location.longitude;
+                                            CountryCode = location.country_code.toLowerCase();
+                                            Ip = location.ip;
+                                            //hide spinner
+                                            $('#spinnerRegion').hide();
+                                            InChat(InChatData, "anonymous");
+                                            chat.server.requestFromVisitor(UserId, BizChatID, WidgetID, WidgetName, SignalID, "anonymous", "", "", "anonymous " + json.InChat.JoinedChat, Ip, newURL, lat, lang, "0", CountryCode);
+                                        });
+                                    }
+                                } else {
+                                    $('#inchat').hide();
+                                    NoOperator(json);
+                                }
+                            }, 3000);
+                        }
+                    }
+                }
+            } else if (json.Collapse.Type == "Image and Tab") {
+                if (aa == "minus.png") {
+                    $(".sendreque").attr('src', Url + '/Content/images/icon/plus.png');
+                    $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                    Isopen = false;
+                    $('.top-img').show();
+                }
+                else {
+                    $(".sendreque").attr('src', Url + '/Content/images/icon/minus.png');
+                    $(".btnmini").attr('src', Url + '/Content/images/icon/minus.png');
+                    Isopen = true;
+                    $('.top-img').hide();
+                    if (json.StartChat.AskforName == false && json.StartChat.AskforEmail == false && json.StartChat.AskforQuestion == false && json.StartChat.AskforDepartment == false) {
+                        if (IsSendRequest) {
+                            IsSendRequest = false;
+                            SignalID = chat.connection.id;
+                            VisitorName = "anonymous";
+                            WidgetName = json.WidgetsName;
+                            setTimeout(function () {
+                                if (IsOperatorAvailable) {
+                                    if (ChatUserInfoID == "" || ChatUserInfoID == null) {
+                                        $('#spinnerRegion').show();
+                                        jQuery.get(Url + "/Plugin/get_visitor_info.php", function (data) {
+                                            var location = JSON.parse(data);
+                                            lat = location.latitude;
+                                            lang = location.longitude;
+                                            CountryCode = location.country_code.toLowerCase();
+                                            Ip = location.ip;
+                                            //hide spinner
+                                            $('#spinnerRegion').hide();
+                                            InChat(InChatData, "anonymous");
+                                            chat.server.requestFromVisitor(UserId, BizChatID, WidgetID, WidgetName, SignalID, "anonymous", "", "", "anonymous " + json.InChat.JoinedChat, Ip, newURL, lat, lang, "0", CountryCode);
+                                        });
+                                    }
+                                } else {
+                                    $('#inchat').hide();
+                                    NoOperator(json);
+                                }
+                            }, 3000);
+                        }
+                    }
+                }
+            } else {
+                if (aa == "minus.png") {
+                    $(".sendreque").attr('src', Url + '/Content/images/icon/plus.png');
+                    $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                    Isopen = false;
+                }
+                else {
+                    $(".sendreque").attr('src', Url + '/Content/images/icon/minus.png');
+                    $(".btnmini").attr('src', Url + '/Content/images/icon/minus.png');
+                    Isopen = true;
+                    if (json.StartChat.AskforName == false && json.StartChat.AskforEmail == false && json.StartChat.AskforQuestion == false && json.StartChat.AskforDepartment == false) {
+                        if (IsSendRequest) {
+                            IsSendRequest = false;
+                            SignalID = chat.connection.id;
+                            VisitorName = "anonymous";
+                            WidgetName = json.WidgetsName;
+                            setTimeout(function () {
+                                if (IsOperatorAvailable) {
+                                    if (ChatUserInfoID == "" || ChatUserInfoID == null) {
+                                        $('#spinnerRegion').show();
+                                        jQuery.get(Url + "/Plugin/get_visitor_info.php", function (data) {
+                                            var location = JSON.parse(data);
+                                            lat = location.latitude;
+                                            lang = location.longitude;
+                                            CountryCode = location.country_code.toLowerCase();
+                                            Ip = location.ip;
+                                            //hide spinner
+                                            $('#spinnerRegion').hide();
+                                            InChat(InChatData, "anonymous");
+                                            chat.server.requestFromVisitor(UserId, BizChatID, WidgetID, WidgetName, SignalID, "anonymous", "", "", "anonymous " + json.InChat.JoinedChat, Ip, newURL, lat, lang, "0", CountryCode);
+                                        });
+                                    }
+                                } else {
+                                    $('#inchat').hide();
+                                    NoOperator(json);
+                                }
+                            }, 3000);
+                        }
+                    }
+                }
+            }
         }
-        else {
-            $(".btnmini").attr('src', Url + '/Content/images/icon/minus.png');
-            Isopen = true;
+
+        $("#name-box").toggle('fast');
+        $("#message-box").toggle('fast');
+        $("#close-box").toggle('fast');
+        $("#NoOp-box").toggle('fast');
+        $("#NoOpSendMail-box").toggle('fast');
+    });
+
+    $(document).on('click', '.bottom-img', function () {
+        IsOperatorAvailable = false;
+        chat.server.operatorCheckSend(BizChatID);
+
+        if (lat == null || lat == undefined) {
+            lat = "";
+        }
+        if (lang == null || lang == undefined) {
+            lang = "";
+        }
+        if (CountryCode == null || CountryCode == undefined) {
+            CountryCode = "";
+        }
+        if (Ip == null || Ip == undefined) {
+            Ip = "";
+        }
+        var img = $('.btnmini')[0].src;
+        var aa = img.substring(img.length - 9, img.length);
+
+        if (json.Collapse.Type == "Image") {
+            if (aa == "minus.png") {
+                $(".sendreque").attr('src', Url + '/Content/images/icon/plus.png');
+                $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                Isopen = false;
+                $(".chattable").hide();
+                $('.bottom-img').show();
+            }
+            else {
+                $(".sendreque").attr('src', Url + '/Content/images/icon/minus.png');
+                $(".btnmini").attr('src', Url + '/Content/images/icon/minus.png');
+                Isopen = true;
+                $(".chattable").show();
+                $('.bottom-img').hide();
+                if (json.StartChat.AskforName == false && json.StartChat.AskforEmail == false && json.StartChat.AskforQuestion == false && json.StartChat.AskforDepartment == false) {
+                    if (IsSendRequest) {
+                        IsSendRequest = false;
+                        SignalID = chat.connection.id;
+                        VisitorName = "anonymous";
+                        WidgetName = json.WidgetsName;
+                        setTimeout(function () {
+                            if (IsOperatorAvailable) {
+                                if (ChatUserInfoID == "" || ChatUserInfoID == null) {
+                                    $('#spinnerRegion').show();
+                                    jQuery.get(Url + "/Plugin/get_visitor_info.php", function (data) {
+                                        var location = JSON.parse(data);
+                                        lat = location.latitude;
+                                        lang = location.longitude;
+                                        CountryCode = location.country_code.toLowerCase();
+                                        Ip = location.ip;
+                                        //hide spinner
+                                        $('#spinnerRegion').hide();
+                                        InChat(InChatData, "anonymous");
+                                        chat.server.requestFromVisitor(UserId, BizChatID, WidgetID, WidgetName, SignalID, "anonymous", "", "", "anonymous " + json.InChat.JoinedChat, Ip, newURL, lat, lang, "0", CountryCode);
+                                    });
+                                }
+                            } else {
+                                $('#inchat').hide();
+                                NoOperator(json);
+                            }
+                        }, 3000);
+                    }
+                }
+            }
+        } else if (json.Collapse.Type == "Image and Tab") {
+            if (aa == "minus.png") {
+                $(".sendreque").attr('src', Url + '/Content/images/icon/plus.png');
+                $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                Isopen = false;
+                $('.bottom-img').show();
+            }
+            else {
+                $(".sendreque").attr('src', Url + '/Content/images/icon/minus.png');
+                $(".btnmini").attr('src', Url + '/Content/images/icon/minus.png');
+                Isopen = true;
+                $('.bottom-img').hide();
+                if (json.StartChat.AskforName == false && json.StartChat.AskforEmail == false && json.StartChat.AskforQuestion == false && json.StartChat.AskforDepartment == false) {
+                    if (IsSendRequest) {
+                        IsSendRequest = false;
+                        SignalID = chat.connection.id;
+                        VisitorName = "anonymous";
+                        WidgetName = json.WidgetsName;
+                        setTimeout(function () {
+                            if (IsOperatorAvailable) {
+                                if (ChatUserInfoID == "" || ChatUserInfoID == null) {
+                                    $('#spinnerRegion').show();
+                                    jQuery.get(Url + "/Plugin/get_visitor_info.php", function (data) {
+                                        var location = JSON.parse(data);
+                                        lat = location.latitude;
+                                        lang = location.longitude;
+                                        CountryCode = location.country_code.toLowerCase();
+                                        Ip = location.ip;
+                                        //hide spinner
+                                        $('#spinnerRegion').hide();
+                                        InChat(InChatData, "anonymous");
+                                        chat.server.requestFromVisitor(UserId, BizChatID, WidgetID, WidgetName, SignalID, "anonymous", "", "", "anonymous " + json.InChat.JoinedChat, Ip, newURL, lat, lang, "0", CountryCode);
+                                    });
+                                }
+                            } else {
+                                $('#inchat').hide();
+                                NoOperator(json);
+                            }
+                        }, 3000);
+                    }
+                }
+            }
+        } else {
+            if (aa == "minus.png") {
+                $(".sendreque").attr('src', Url + '/Content/images/icon/plus.png');
+                $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                Isopen = false;
+            }
+            else {
+                $(".sendreque").attr('src', Url + '/Content/images/icon/minus.png');
+                $(".btnmini").attr('src', Url + '/Content/images/icon/minus.png');
+                Isopen = true;
+                if (json.StartChat.AskforName == false && json.StartChat.AskforEmail == false && json.StartChat.AskforQuestion == false && json.StartChat.AskforDepartment == false) {
+                    if (IsSendRequest) {
+                        IsSendRequest = false;
+                        SignalID = chat.connection.id;
+                        VisitorName = "anonymous";
+                        WidgetName = json.WidgetsName;
+                        setTimeout(function () {
+                            if (IsOperatorAvailable) {
+                                if (ChatUserInfoID == "" || ChatUserInfoID == null) {
+                                    $('#spinnerRegion').show();
+                                    jQuery.get(Url + "/Plugin/get_visitor_info.php", function (data) {
+                                        var location = JSON.parse(data);
+                                        lat = location.latitude;
+                                        lang = location.longitude;
+                                        CountryCode = location.country_code.toLowerCase();
+                                        Ip = location.ip;
+                                        //hide spinner
+                                        $('#spinnerRegion').hide();
+                                        InChat(InChatData, "anonymous");
+                                        chat.server.requestFromVisitor(UserId, BizChatID, WidgetID, WidgetName, SignalID, "anonymous", "", "", "anonymous " + json.InChat.JoinedChat, Ip, newURL, lat, lang, "0", CountryCode);
+                                    });
+                                }
+                            } else {
+                                $('#inchat').hide();
+                                NoOperator(json);
+                            }
+                        }, 3000);
+                    }
+                }
+            }
         }
         $("#name-box").toggle('fast');
         $("#message-box").toggle('fast');
@@ -139,15 +732,79 @@ jQuery(function ($) {
     });
 
     $(document).on('click', '.hedertext', function () {
+        $('#spinnerRegion').hide();
         var img = $('.btnmini')[0].src;
         var aa = img.substring(img.length - 9, img.length);
-        if (aa == "minus.png") {
-            $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
-            Isopen = false;
-        }
-        else {
-            $(".btnmini").attr('src', Url + '/Content/images/icon/minus.png');
-            Isopen = true;
+        if (json.Collapse.Position == "Bottom Left" || json.Collapse.Position == "Bottom Right") {
+            if (json.Collapse.Type == "Image") {
+                if (aa == "minus.png") {
+                    $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                    Isopen = false;
+                    $(".chattable").hide();
+                    $('.top-img').show();
+                }
+                else {
+                    $(".btnmini").attr('src', Url + '/Content/images/icon/minus.png');
+                    Isopen = true;
+                    $(".chattable").show();
+                    $('.top-img').hide();
+                }
+            } else if (json.Collapse.Type == "Image and Tab") {
+                if (aa == "minus.png") {
+                    $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                    Isopen = false;
+                    $('.top-img').show();
+                }
+                else {
+                    $(".btnmini").attr('src', Url + '/Content/images/icon/minus.png');
+                    Isopen = true;
+                    $('.top-img').hide();
+                }
+            } else {
+                if (aa == "minus.png") {
+                    $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                    Isopen = false;
+                }
+                else {
+                    $(".btnmini").attr('src', Url + '/Content/images/icon/minus.png');
+                    Isopen = true;
+                }
+            }
+        } else {
+            if (json.Collapse.Type == "Image") {
+                if (aa == "minus.png") {
+                    $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                    Isopen = false;
+                    $('.bottom-img').show();
+                    $(".chattable").hide();
+                }
+                else {
+                    $(".btnmini").attr('src', Url + '/Content/images/icon/minus.png');
+                    Isopen = true;
+                    $(".chattable").show();
+                    $('.bottom-img').hide();
+                }
+            } else if (json.Collapse.Type == "Image and Tab") {
+                if (aa == "minus.png") {
+                    $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                    Isopen = false;
+                    $('.bottom-img').show();
+                }
+                else {
+                    $(".btnmini").attr('src', Url + '/Content/images/icon/minus.png');
+                    Isopen = true;
+                    $('.bottom-img').hide();
+                }
+            } else {
+                if (aa == "minus.png") {
+                    $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                    Isopen = false;
+                }
+                else {
+                    $(".btnmini").attr('src', Url + '/Content/images/icon/minus.png');
+                    Isopen = true;
+                }
+            }
         }
         $("#name-box").toggle('fast');
         $("#message-box").toggle('fast');
@@ -198,17 +855,6 @@ jQuery(function ($) {
     $('#Likechat').hide();
 
     $.connection.hub.start().done(function () {
-        jQuery.ajax({
-            url: 'https://geoip.maxmind.com/geoip/v2.1/city/me',
-            type: 'GET',
-            data: { 'username': '101108', 'password': 'sHciT4aFZzvw' },
-            success: function (geoipResponse) {
-                lat = geoipResponse.location.latitude;
-                lang = geoipResponse.location.longitude;
-                CountryCode = geoipResponse.country.iso_code.toLowerCase();
-                Ip = geoipResponse.traits.ip_address;
-            }
-        });
 
         if (JSON.parse(localStorage.getItem("StorageData")) != null) {
             IsContinue = true;
@@ -226,88 +872,118 @@ jQuery(function ($) {
         chat.server.getWidgetDataSend(BizChatID, ChatUserInfoID, VisitorId, WidgetID, chat.connection.id, Key);
 
         $(document).on('click', '#SendRequest', function () {
-            IsOperatorAvailable = false;
-            $.connection.hub.start();
-            setTimeout(function () {
+           
+            if (IsSendRequest) {
+                IsSendRequest = false;
+                IsOperatorAvailable = false;
                 chat.server.operatorCheckSend(BizChatID);
-            }, 500);
-            if (lat == null || lat == undefined) {
-                lat = "";
-            }
-            if (lang == null || lang == undefined) {
-                lang = "";
-            }
-            if (CountryCode == null || CountryCode == undefined) {
-                CountryCode = "";
-            }
-            if (Ip == null || Ip == undefined) {
-                Ip = "";
-            }
 
-            var name = $.trim($("#txtname").val());
-            if (json.StartChat.AskforName != true) {
-                if (name == "") {
-                    name = "anonymous";
+                if (lat == null || lat == undefined) {
+                    lat = "";
                 }
-            }
-            var email = $.trim($('#txtemails').val());
-            var question = $.trim($('#txtquestion').val());
-            var WidgetName = json.WidgetsName;
-            VisitorName = name;
-            var msg = VisitorName + ' ' + json.InChat.JoinedChat;
-            SignalID = chat.connection.id;
-            var filter = /^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-            InChat(InChatData, VisitorName);
-            setTimeout(function () {
-                if (IsOperatorAvailable) {
-                    if (email == "") {
-                        if (name != "") {
-                            chat.server.requestFromVisitor(UserId, BizChatID, WidgetID, WidgetName, SignalID, name, email, question, msg, Ip, newURL, lat, lang, Department, CountryCode);
-                            $('#startchat').hide();
-                            $('#inchat').show();
-                            $('#defchat').show();
-                            $('#inchathead').text("Welcome to LiveChat");
-                            $("#txtname").val("");
-                            $("#txtemails").val("");
-                            $('#txtquestion').val("");
+                if (lang == null || lang == undefined) {
+                    lang = "";
+                }
+                if (CountryCode == null || CountryCode == undefined) {
+                    CountryCode = "";
+                }
+                if (Ip == null || Ip == undefined) {
+                    Ip = "";
+                }
+
+                var name = $.trim($("#txtname").val());
+                if (json.StartChat.AskforName != true) {
+                    if (name == "") {
+                        name = "anonymous";
+                    }
+                }
+
+                var email = $.trim($('#txtemails').val());
+                var question = $.trim($('#txtquestion').val());
+                var WidgetName = json.WidgetsName;
+                VisitorName = name;
+                var msg = VisitorName + ' ' + json.InChat.JoinedChat;
+                SignalID = chat.connection.id;
+                var filter = /^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+                InChat(InChatData, VisitorName);
+
+                setTimeout(function () {
+                    if (IsOperatorAvailable) {
+                        if (email == "") {
+                            if (name != "") {
+                                $('#spinnerRegion').show();
+                                jQuery.get(Url + "/Plugin/get_visitor_info.php", function (data) {
+                                    var location = JSON.parse(data);
+                                    lat = location.latitude;
+                                    lang = location.longitude;
+                                    CountryCode = location.country_code.toLowerCase();
+                                    Ip = location.ip;
+                                    //hide spinner
+                                    $('#spinnerRegion').hide();
+                                    chat.server.requestFromVisitor(UserId, BizChatID, WidgetID, WidgetName, SignalID, name, email, question, msg, Ip, newURL, lat, lang, Department, CountryCode);
+                                    $('#startchat').hide();
+                                    $('#inchat').show();
+                                    $('#defchat').show();
+                                    $('#inchathead').text("Welcome to LiveChat");
+                                    $("#txtname").val("");
+                                    $("#txtemails").val("");
+                                    $('#txtquestion').val("");
+
+                                });
+                                
+                            } else {
+                                alert("please enter Name.");
+                                IsSendRequest = true;
+                            }
                         } else {
-                            alert("please enter Name.");
+                            if (name != "") {
+                                if (filter.test(email)) {
+                                    $('#spinnerRegion').show();
+                                    jQuery.get(Url + "/Plugin/get_visitor_info.php", function (data) {
+                                        var location = JSON.parse(data);
+                                        lat = location.latitude;
+                                        lang = location.longitude;
+                                        CountryCode = location.country_code.toLowerCase();
+                                        Ip = location.ip;
+                                        //hide spinner
+                                        $('#spinnerRegion').hide();
+                                        chat.server.requestFromVisitor(UserId, BizChatID, WidgetID, WidgetName, SignalID, name, email, question, msg, Ip, newURL, lat, lang, Department, CountryCode);
+                                        $('#startchat').hide();
+                                        $('#inchat').show();
+                                        $('#defchat').show();
+                                        $("#txtname").val("");
+                                        $("#txtemails").val("");
+                                        $('#txtquestion').val("");
+                                    });
+                                }
+                                else {
+                                    alert("please enter valid email address.");
+                                    IsSendRequest = true;
+                                }
+                            } else {
+                                alert("please enter Name.");
+                                IsSendRequest = true;
+                            }
                         }
                     } else {
-                        if (name != "") {
-                            if (filter.test(email)) {
-                                chat.server.requestFromVisitor(UserId, BizChatID, WidgetID, WidgetName, SignalID, name, email, question, msg, Ip, newURL, lat, lang, Department, CountryCode);
-                                $('#startchat').hide();
-                                $('#inchat').show();
-                                $('#defchat').show();
-                                $("#txtname").val("");
-                                $("#txtemails").val("");
-                                $('#txtquestion').val("");
-                            }
-                            else {
-                                alert("please enter valid email address.");
-                            }
-                        } else {
-                            alert("please enter Name.");
-                        }
+                        $('#closechat').hide();
+                        $('#startchat').hide();
+                        $('#inchat').hide();
+                        NoOperator(json);
                     }
-                } else {
-                    $('#closechat').hide();
-                    $('#startchat').hide();
-                    $('#inchat').hide();
-                    NoOperator(json);
+                }, 3000);
+
+                if (!Isopen) {
+                    Isopen = true;
+                    $("#name-box").toggle('fast');
+                    $("#message-box").toggle('fast');
+                    $("#close-box").toggle('fast');
+                    $("#NoOp-box").toggle('fast');
+                    $("#NoOpSendMail-box").toggle('fast');
+                    $(".btnmini").attr('src', Url + '/Content/images/icon/minus.png');
                 }
-            }, 2000);
-            if (!Isopen) {
-                Isopen = true;
-                $("#name-box").toggle('fast');
-                $("#message-box").toggle('fast');
-                $("#close-box").toggle('fast');
-                $("#NoOp-box").toggle('fast');
-                $("#NoOpSendMail-box").toggle('fast');
-                $(".btnmini").attr('src', Url + '/Content/images/icon/minus.png');
+                $(".sendreque").attr('src', Url + '/Content/images/icon/minus.png');
             }
-            $(".sendreque").attr('src', Url + '/Content/images/icon/minus.png');
         });
 
         $(document).on('click', '#MessageSend', function () {
@@ -386,6 +1062,7 @@ jQuery(function ($) {
                 return false;
             }
         });
+
         $(".messinput").blur(function () {
             chat.server.removeCheckTypingSend(VisitorId, VisitorName, BizChatID, ChatUserInfoID);
         });
@@ -403,16 +1080,74 @@ jQuery(function ($) {
             localStorage.removeItem("VisitorID");
             ChatUserInfoID = null;
             ChatData = null;
+            IsSendRequest = true;
             $('#chatmsgs').empty();
             setTimeout(function () {
                 if (IsOperatorAvailable) {
-                    if (json.StartChat.AskforName == false && json.StartChat.AskforEmail == false && json.StartChat.AskforQuestion == false && json.StartChat.AskforDepartment == false) {
-                        $('#closechat').hide();
-                        $('#inchat').show();
-
+                    if (json.Collapse.Position == "Bottom Left" || json.Collapse.Position == "Bottom Right") {
+                        if (json.Collapse.Type == "Image") {
+                            if (json.StartChat.AskforName == false && json.StartChat.AskforEmail == false && json.StartChat.AskforQuestion == false && json.StartChat.AskforDepartment == false) {
+                                $('.top-img').show();
+                                $('#inchat').show();
+                                $('#closechat').hide();
+                                $(".chattable").hide();
+                            } else {
+                                $('.top-img').show();
+                                $('#startchat').show();
+                                $('#closechat').hide();
+                                $(".chattable").hide();
+                            }
+                        } else if (json.Collapse.Type == "Image and Tab") {
+                            if (json.StartChat.AskforName == false && json.StartChat.AskforEmail == false && json.StartChat.AskforQuestion == false && json.StartChat.AskforDepartment == false) {
+                                $('.top-img').show();
+                                $('#inchat').show();
+                                $('#closechat').hide();
+                            } else {
+                                $('.top-img').show();
+                                $('#startchat').show();
+                                $('#closechat').hide();
+                            }
+                        } else {
+                            if (json.StartChat.AskforName == false && json.StartChat.AskforEmail == false && json.StartChat.AskforQuestion == false && json.StartChat.AskforDepartment == false) {
+                                $('#closechat').hide();
+                                $('#inchat').show();
+                            } else {
+                                $('#startchat').show();
+                                $('#closechat').hide();
+                            }
+                        }
                     } else {
-                        $('#startchat').show();
-                        $('#closechat').hide();
+                        if (json.Collapse.Type == "Image") {
+                            if (json.StartChat.AskforName == false && json.StartChat.AskforEmail == false && json.StartChat.AskforQuestion == false && json.StartChat.AskforDepartment == false) {
+                                $('.bottom-img').show();
+                                $('#inchat').show();
+                                $('#closechat').hide();
+                                $(".chattable").hide();
+                            } else {
+                                $('.bottom-img').show();
+                                $('#startchat').show();
+                                $('#closechat').hide();
+                                $(".chattable").hide();
+                            }
+                        } else if (json.Collapse.Type == "Image and Tab") {
+                            if (json.StartChat.AskforName == false && json.StartChat.AskforEmail == false && json.StartChat.AskforQuestion == false && json.StartChat.AskforDepartment == false) {
+                                $('.bottom-img').show();
+                                $('#inchat').show();
+                                $('#closechat').hide();
+                            } else {
+                                $('.bottom-img').show();
+                                $('#startchat').show();
+                                $('#closechat').hide();
+                            }
+                        } else {
+                            if (json.StartChat.AskforName == false && json.StartChat.AskforEmail == false && json.StartChat.AskforQuestion == false && json.StartChat.AskforDepartment == false) {
+                                $('#closechat').hide();
+                                $('#inchat').show();
+                            } else {
+                                $('#startchat').show();
+                                $('#closechat').hide();
+                            }
+                        }
                     }
                 } else {
                     $('#closechat').hide();
@@ -525,23 +1260,82 @@ jQuery(function ($) {
         });
 
         $(document).on('click', '#refreshafterchats', function () {
+            $('#spinnerRegion').hide();
             localStorage.removeItem("StorageData");
             localStorage.removeItem("VisitorID");
             ChatUserInfoID = null;
             ChatData = null;
+            IsSendRequest = true;
             $('#chatmsgs').empty();
             setTimeout(function () {
                 chat.server.operatorCheckSend(BizChatID);
             }, 500);
             setTimeout(function () {
                 if (IsOperatorAvailable) {
-                    if (json.StartChat.AskforName == false && json.StartChat.AskforEmail == false && json.StartChat.AskforQuestion == false && json.StartChat.AskforDepartment == false) {
-                        $('#closechat').hide();
-                        $('#inchat').show();
-
+                    if (json.Collapse.Position == "Bottom Left" || json.Collapse.Position == "Bottom Right") {
+                        if (json.Collapse.Type == "Image") {
+                            if (json.StartChat.AskforName == false && json.StartChat.AskforEmail == false && json.StartChat.AskforQuestion == false && json.StartChat.AskforDepartment == false) {
+                                $('.top-img').show();
+                                $('#inchat').show();
+                                $('#closechat').hide();
+                                $(".chattable").hide();
+                            } else {
+                                $('.top-img').show();
+                                $('#startchat').show();
+                                $('#closechat').hide();
+                                $(".chattable").hide();
+                            }
+                        } else if (json.Collapse.Type == "Image and Tab") {
+                            if (json.StartChat.AskforName == false && json.StartChat.AskforEmail == false && json.StartChat.AskforQuestion == false && json.StartChat.AskforDepartment == false) {
+                                $('.top-img').show();
+                                $('#inchat').show();
+                                $('#closechat').hide();
+                            } else {
+                                $('.top-img').show();
+                                $('#startchat').show();
+                                $('#closechat').hide();
+                            }
+                        } else {
+                            if (json.StartChat.AskforName == false && json.StartChat.AskforEmail == false && json.StartChat.AskforQuestion == false && json.StartChat.AskforDepartment == false) {
+                                $('#closechat').hide();
+                                $('#inchat').show();
+                            } else {
+                                $('#startchat').show();
+                                $('#closechat').hide();
+                            }
+                        }
                     } else {
-                        $('#startchat').show();
-                        $('#closechat').hide();
+                        if (json.Collapse.Type == "Image") {
+                            if (json.StartChat.AskforName == false && json.StartChat.AskforEmail == false && json.StartChat.AskforQuestion == false && json.StartChat.AskforDepartment == false) {
+                                $('.bottom-img').show();
+                                $('#inchat').show();
+                                $('#closechat').hide();
+                                $(".chattable").hide();
+                            } else {
+                                $('.bottom-img').show();
+                                $('#startchat').show();
+                                $('#closechat').hide();
+                                $(".chattable").hide();
+                            }
+                        } else if (json.Collapse.Type == "Image and Tab") {
+                            if (json.StartChat.AskforName == false && json.StartChat.AskforEmail == false && json.StartChat.AskforQuestion == false && json.StartChat.AskforDepartment == false) {
+                                $('.bottom-img').show();
+                                $('#inchat').show();
+                                $('#closechat').hide();
+                            } else {
+                                $('.bottom-img').show();
+                                $('#startchat').show();
+                                $('#closechat').hide();
+                            }
+                        } else {
+                            if (json.StartChat.AskforName == false && json.StartChat.AskforEmail == false && json.StartChat.AskforQuestion == false && json.StartChat.AskforDepartment == false) {
+                                $('#closechat').hide();
+                                $('#inchat').show();
+                            } else {
+                                $('#startchat').show();
+                                $('#closechat').hide();
+                            }
+                        }
                     }
                 } else {
                     $('#closechat').hide();
@@ -549,6 +1343,7 @@ jQuery(function ($) {
                     $('#inchat').hide();
                     NoOperator(json);
                 }
+
                 Isopen = false;
                 $("#name-box").hide();
                 $("#message-box").hide();
@@ -614,15 +1409,54 @@ jQuery(function ($) {
                 if (Data.JsonString != null) {
                     json = JSON.parse(Data.JsonString);
                     InChatData = json.InChat;
-                    for (var i in GetDepartments) {
-                        $('.DrpDepartment').append('<option value="' + GetDepartments[i].DepartmentId + '">' + GetDepartments[i].DepartmentName + '</option>');
+                    for (var k in GetDepartments) {
+                        if(GetDepartments[k]){
+                            $('.DrpDepartment').append('<option value="' + GetDepartments[k].DepartmentId + '">' + GetDepartments[k].DepartmentName + '</option>');
+                        }
                     }
                     setTimeout(function () {
                         BindWidget(json);
                         if (IsOperatorAvailable) {
-                            if (json.StartChat.AskforName == false && json.StartChat.AskforEmail == false && json.StartChat.AskforQuestion == false && json.StartChat.AskforDepartment == false) {
-                                $('#startchat').hide();
-                                $('#inchat').show();
+                            if (json.Collapse.Position == "Bottom Left" || json.Collapse.Position == "Bottom Right") {
+                                if (json.Collapse.Type == "Image") {
+                                    if (json.StartChat.AskforName == false && json.StartChat.AskforEmail == false && json.StartChat.AskforQuestion == false && json.StartChat.AskforDepartment == false) {
+                                        $('.top-img').show();
+                                        $('#inchat').show();
+                                        $('#startchat').hide();
+                                        $(".chattable").hide();
+                                    }
+                                } else if (json.Collapse.Type == "Image and Tab") {
+                                    if (json.StartChat.AskforName == false && json.StartChat.AskforEmail == false && json.StartChat.AskforQuestion == false && json.StartChat.AskforDepartment == false) {
+                                        $('.top-img').show();
+                                        $('#startchat').hide();
+                                        $('#inchat').show();
+                                    }
+                                } else {
+                                    if (json.StartChat.AskforName == false && json.StartChat.AskforEmail == false && json.StartChat.AskforQuestion == false && json.StartChat.AskforDepartment == false) {
+                                        $('#startchat').hide();
+                                        $('#inchat').show();
+                                    }
+                                }
+                            } else {
+                                if (json.Collapse.Type == "Image") {
+                                    if (json.StartChat.AskforName == false && json.StartChat.AskforEmail == false && json.StartChat.AskforQuestion == false && json.StartChat.AskforDepartment == false) {
+                                        $('.bottom-img').show();
+                                        $('#inchat').show();
+                                        $('#startchat').hide();
+                                        $(".chattable").hide();
+                                    }
+                                } else if (json.Collapse.Type == "Image and Tab") {
+                                    if (json.StartChat.AskforName == false && json.StartChat.AskforEmail == false && json.StartChat.AskforQuestion == false && json.StartChat.AskforDepartment == false) {
+                                        $('.bottom-img').show();
+                                        $('#startchat').hide();
+                                        $('#inchat').show();
+                                    }
+                                } else {
+                                    if (json.StartChat.AskforName == false && json.StartChat.AskforEmail == false && json.StartChat.AskforQuestion == false && json.StartChat.AskforDepartment == false) {
+                                        $('#startchat').hide();
+                                        $('#inchat').show();
+                                    }
+                                }
                             }
                         } else {
                             $('#inchat').hide();
@@ -888,8 +1722,8 @@ function BindWidget(AllData) {
     jQuery('#defchat').empty();
     jQuery('#chatmsgs').empty();
 
-    jQuery("#top-img").hide();
-    jQuery("#bottom-img").hide();
+    jQuery(".top-img").hide();
+    jQuery(".bottom-img").hide();
 
     jQuery("#name-box").hide();
     jQuery("#message-box").hide();
@@ -910,9 +1744,12 @@ function BindWidget(AllData) {
         jQuery('.sendmess').css('border-top-color', '' + AllData.Color + ' !important');
     }
 
-    if (AllData.Collapse.ShowWidgetHideButton) {
-        jQuery('#btnupdown').show();
-    } else { jQuery('#btnupdown').hide(); }
+    //if (AllData.Collapse.ShowWidgetHideButton) {
+    //    jQuery('#btnupdown').show();
+    //} else {
+    //    jQuery('#btnupdown').hide();
+    //}
+
     if (IsOperatorAvailable) {
         if (IsContinue) {
             if (!Isopen) {
@@ -1043,59 +1880,104 @@ function SetPosition(val) {
     //jQuery("#Position").select2("val", val.Position);
     if (val.Position == "Bottom Left") {
         jQuery('.chatwindow').css({ 'bottom': '0', 'left': '0', 'top': '', 'right': '', 'position': 'fixed', 'z-index': '999' });
-        jQuery('#btnupdown').attr('src', Url + '/Content/images/icon/arrow-down.png');
-        if (val.Type == "Image" || val.Type == "Image and Tab") {
-
+        if (val.Type == "Image") {
             if (val.Image != 0) {
-                jQuery("#top-img").show();
-                jQuery("#bottom-img").hide();
+                jQuery(".top-img").show();
+                jQuery(".bottom-img").hide();
+                jQuery(".chattable").hide();
             }
             else {
                 if (val.IsCustom) {
-                    jQuery("#top-img").show();
-                    jQuery("#bottom-img").hide();
+                    jQuery(".top-img").show();
+                    jQuery(".bottom-img").hide();
+                    jQuery(".chattable").hide();
+                }
+            }
+        } else if (val.Type == "Image and Tab") {
+            if (val.Image != 0) {
+                jQuery(".top-img").show();
+                jQuery(".bottom-img").hide();
+            }
+            else {
+                if (val.IsCustom) {
+                    jQuery(".top-img").show();
+                    jQuery(".bottom-img").hide();
                 }
             }
         }
     } else if (val.Position == "Bottom Right") {
         jQuery('.chatwindow').css({ 'bottom': '0', 'left': '', 'top': '', 'right': '0', 'position': 'fixed', 'z-index': '999' });
-        jQuery('#btnupdown').attr('src', Url + '/Content/images/icon/arrow-down.png');
-        if (val.Type == "Image" || val.Type == "Image and Tab") {
+        if (val.Type == "Image") {
             if (val.Image != 0) {
-                jQuery("#top-img").show();
-                jQuery("#bottom-img").hide();
+                jQuery(".top-img").show();
+                jQuery(".bottom-img").hide();
+                jQuery(".chattable").hide();
             } else {
                 if (val.IsCustom) {
-                    jQuery("#top-img").show();
-                    jQuery("#bottom-img").hide();
+                    jQuery(".top-img").show();
+                    jQuery(".bottom-img").hide();
+                    jQuery(".chattable").hide();
+                }
+            }
+        } else if (val.Type == "Image and Tab") {
+            if (val.Image != 0) {
+                jQuery(".top-img").show();
+                jQuery(".bottom-img").hide();
+            }
+            else {
+                if (val.IsCustom) {
+                    jQuery(".top-img").show();
+                    jQuery(".bottom-img").hide();
                 }
             }
         }
     } else if (val.Position == "Top Left") {
         jQuery('.chatwindow').css({ 'bottom': '', 'left': '0', 'top': '0', 'right': '', 'position': 'fixed', 'z-index': '999' });
-        jQuery('#btnupdown').attr('src', Url + '/Content/images/icon/arrow-up.png');
-        if (val.Type == "Image" || val.Type == "Image and Tab") {
+        if (val.Type == "Image") {
             if (val.Image != 0) {
-                jQuery("#top-img").hide();
-                jQuery("#bottom-img").show();
+                jQuery(".top-img").hide();
+                jQuery(".bottom-img").show();
+                jQuery(".chattable").hide();
             } else {
                 if (val.IsCustom) {
-                    jQuery("#top-img").hide();
-                    jQuery("#bottom-img").show();
+                    jQuery(".top-img").hide();
+                    jQuery(".bottom-img").show();
+                    jQuery(".chattable").hide();
+                }
+            }
+        } else if (val.Type == "Image and Tab") {
+            if (val.Image != 0) {
+                jQuery(".top-img").hide();
+                jQuery(".bottom-img").show();
+            } else {
+                if (val.IsCustom) {
+                    jQuery(".top-img").hide();
+                    jQuery(".bottom-img").show();
                 }
             }
         }
     } else if (val.Position == "Top Right") {
         jQuery('.chatwindow').css({ 'bottom': '', 'left': '', 'top': '0', 'right': '0', 'position': 'fixed', 'z-index': '999' });
-        jQuery('#btnupdown').attr('src', Url + '/Content/images/icon/arrow-up.png');
-        if (val.Type == "Image" || val.Type == "Image and Tab") {
+        if (val.Type == "Image") {
             if (val.Image != 0) {
-                jQuery("#top-img").hide();
-                jQuery("#bottom-img").show();
+                jQuery(".top-img").hide();
+                jQuery(".bottom-img").show();
+                jQuery(".chattable").hide();
             } else {
                 if (val.IsCustom) {
-                    jQuery("#top-img").hide();
-                    jQuery("#bottom-img").show();
+                    jQuery(".top-img").hide();
+                    jQuery(".bottom-img").show();
+                    jQuery(".chattable").hide();
+                }
+            }
+        } else if (val.Type == "Image and Tab") {
+            if (val.Image != 0) {
+                jQuery(".top-img").hide();
+                jQuery(".bottom-img").show();
+            } else {
+                if (val.IsCustom) {
+                    jQuery(".top-img").hide();
+                    jQuery(".bottom-img").show();
                 }
             }
         }
@@ -1357,3 +2239,5 @@ function WidgetsAnimate(val) {
     }
     json.Collapse.Animate = false;
 }
+
+

@@ -89,6 +89,7 @@
     font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
     font-style: italic;
     line-height: 1.5em;
+    /*border-top: 1px solid #dcdcdc !important;*/
     /*min-height: 200px;*/
 }
 
@@ -108,7 +109,7 @@
     background: #fff;
     /*overflow: auto;*/
     margin-top: -1%;
-    color: gray;
+    color: gray !important;
     font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
     position: relative;
 }
@@ -230,7 +231,7 @@
                     float: left;
                     left: 15px;
                     max-width: 78%;
-                    color: white;
+                    color: white !important;
                 }
 
                     .messages div span.left:after {
@@ -284,6 +285,7 @@
                     background-color: gainsboro;
                     right: 15px;
                     max-width: 78%;
+                    color: gray !important; 
                 }
 
 .clear {
@@ -311,5 +313,16 @@ button a {
     font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
 }
 
+/*convert Inline css to class*/
 
+.BizchatBox_TitleInfo {
+    margin-left: 20px !important;
+    margin-top: 10px !important;
+    font-family:Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif !important;
+    font-size: 20px !important;
+    font-weight: 500 !important;
+    font-style: normal !important;
+    text-transform:none !important;
+    color: gray !important;
+}
 

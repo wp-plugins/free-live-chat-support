@@ -53,10 +53,10 @@ Check out our website fore more details http://www.bizchatbox.com/features/
 
 1. Install and activate plugin.
 2. Click on the new BizChatBox button in your left sidebar.
-3. Click the button to take you to the BizChatBox widget selector.
-4. Sign in or create a new account (If you're not already signed in to 5. BizChatBox).
-6. Select a widget for your page.
-7. Click the link to your BizChatBox dashboard and get ready to chat!
+3. Click on Setup Your Chat Widget button.
+4. Sign in or create a new account 
+5. Select a widget for your web site.
+6. Click the link to your BizChatBox dashboard and get ready to chat!
 
 == Frequently Asked Questions ==
 
@@ -105,6 +105,10 @@ Yes, deactivating the BizChatBox plugin will stop the widget from showing up, bu
 
 
 == Upgrade Notice ==
+= 1.7 =
+* Safari Browser issue resolved.
+
+
 = 1.6 =
 * Cross Browser sign up issue resolved and minor UI changes
 
@@ -116,8 +120,10 @@ Yes, deactivating the BizChatBox plugin will stop the widget from showing up, bu
 = 1.2 =
 * Load performance improved. Layout improvements. 
 
+
 = 1.1 =
 * Minor Bug fixes
+
 
 = 1.0 =
 * Plugin launch.
