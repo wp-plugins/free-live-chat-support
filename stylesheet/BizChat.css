@@ -71,6 +71,7 @@
         margin-bottom: -5px;
         margin-left: 1px;
         font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+        vertical-align: middle !important; 
     }
 
 .chattable .chat-messages {
