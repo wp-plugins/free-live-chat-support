@@ -1748,6 +1748,10 @@ function BindWidget(AllData) {
         jQuery('.btnsendreq').attr("style", "background: " + AllData.Color + " !important");
         jQuery('#btnsendemail').attr("style", "background: " + AllData.Color + " !important");
         jQuery('.sendmess').css('border-top-color', '' + AllData.Color + ' !important');
+        jQuery('.hedertext').attr("style", "background: " + AllData.Color + " !important");
+        jQuery('.hederbtn').attr("style", "background: " + AllData.Color + " !important");
+        jQuery('#inchathead').attr("style", "background: " + AllData.Color + " !important");
+        // hedertext, hederbtn,inchathead
     }
 
     //if (AllData.Collapse.ShowWidgetHideButton) {
