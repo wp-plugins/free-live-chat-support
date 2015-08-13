@@ -51,7 +51,7 @@ Check out our website fore more details http://www.bizchatbox.com/features/
 
 == Installation ==
 
-1. Install and activate plugin.
+1. Install and activate plug-in.
 2. Click on the new BizChatBox button in your left sidebar.
 3. Click on Setup Your Chat Widget button.
 4. Sign in or create a new account 
