@@ -1,7 +1,7 @@
 === BizChatBox - Free Live Chat Plugin ===
 Contributors: BizChatBox
 Donate link: https://www.BizChatBox.com
-Tags: chat, livechat, live, live chat, bizchatbox, business chat, online chat, chat online, wordpress chat, customer support, live help, chat widget, customer help, chat widget, Free chat, free live chat, plugin, widget, chat plugin, live chat plugin, live help, visitor chat, WordPress chat, online support, support, support plugin, live help
+Tags: chat, livechat, live, live chat, bizchatbox, business chat, online chat, chat online, wordpress chat, customer support, live help, chat widget, customer help, chat widget, Free chat, free live chat, plugin, widget, chat plugin, ecommerce, live chat plugin, live help, visitor chat, WordPress chat, online support, support, support plugin, live help
 Requires at least: 3.0.1
 Tested up to: 4.2.4
 Stable tag: trunk
