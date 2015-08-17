@@ -88,7 +88,7 @@ Yes, deactivating the BizChatBox plugin will stop the widget from showing up, bu
 
 1. Chat widget
 
-2. Operator dashboard
+2. Operator chat dashboard
 
 3. Customize Chat Widget
 
@@ -106,7 +106,7 @@ Yes, deactivating the BizChatBox plugin will stop the widget from showing up, bu
 
 == Upgrade Notice ==
 = 1.7 =
-* Safari Browser issue resolved.
+* Safari Browser issue resolved. UI Improved
 
 
 = 1.6 =
