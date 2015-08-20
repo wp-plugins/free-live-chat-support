@@ -124,7 +124,7 @@ function biz_chat_generateAcctPage(){
 	</script>
 	<div class="bizchatlinkbox">
 		<p>
-		<a href="http://dashboard.bizchatbox.com/Home/Dashboard" target="_blank">Your BizChatBox dashboard page</a>
+		<a href="http://dashboard.bizchatbox.com/Home/Dashboard" target="_blank">Your BizChatBox Dashboard Page</a>
 		is your place to answer chats, add more widgets, customize their appearance with images and text, manage users, and more!
 		</p>
 	</div>
