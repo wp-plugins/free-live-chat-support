@@ -47,6 +47,8 @@ Customizable canned responses for common questions
 
 Integrations with third party products
 
+Available in 34 different languages
+
 Check out our website fore more details http://www.bizchatbox.com/features/
 
 == Installation ==
