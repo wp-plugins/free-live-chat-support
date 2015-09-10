@@ -1,13 +1,14 @@
 .chattable .nameinput {
-	width:85%;
-	border-radius:4px;
-	height:36px;
-	margin:8px 20px;
-	border:1px solid #ccc !important;
-	padding:3px 3px;
+	width: 86%;
+    border-radius: 4px;
+    margin: 8px 5% 0px;
+    border: 1px solid #ccc;
+    padding: 2%;
+	color: #9E9D9D;
 	box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);
 	 font-family: 'Open Sans', sans-serif;
 }
+
 .name-messages button {
 	margin:15px;
 	 font-family: 'Open Sans', sans-serif;
@@ -20,9 +21,10 @@
 	width:90%;
 	/*height:75px;*/
 	 font-family: 'Open Sans', sans-serif;
-	font-size:medium;
+	font-size:13px;
 	resize:none;
 	border-radius:5px;
+	max-height: 50px;
 	margin:8px;
 	border:1px solid #ccc !important;
 	box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);
@@ -109,7 +111,7 @@
     position: absolute;
     max-width:370px;
     /*max-height:281px;*/
-    max-height:310.908px;
+    /*max-height:310.908px;*/
     top: 0;
     width: 100%;
     z-index: 999999999;

@@ -2,11 +2,11 @@
 
 var Url;
 
-if (window.location.protocol == "http:") {
-    Url = "http://dashboard.bizchatbox.com"
-} else if (window.location.protocol == "https:") {
+//if (window.location.protocol == "http:") {
+//    Url = "http://dashboard.bizchatbox.com"
+//} else if (window.location.protocol == "https:") {
     Url = "https://dashboard.bizchatbox.com"
-}
+//}
 
 function ignoreerror() {
     return true
@@ -50,7 +50,7 @@ jQuery(function ($) {
 
     //#region for HTML --------------------------------------------------------
 
-    $('body').append('<div class="animate chatwindow"><div id="startchat" class="chatwindow"><img class="chat-img top-img" src="" style="display:none !important;" /><table class="chattable"><tr class="chattableraw"><td id="starthead" class="hedertext"></td><td class="hederbtn"><a href="#" style="padding-left: 5px;" class="minimizebtn"><img id="minimize" class="btnimg btnmini" style="margin:auto;vertical-align: middle;" src="' + Url + '/Content/images/icon/plus.png" alt="' + Url + '/Content/images/icon/plus.png" /></a></td></tr><tr id="name-box"><td colspan="2" style="padding:0;"><div class="name-messages"><h4 class="BizchatBox_TitleInfo" id="lblintro"></h4><input id="txtname" class="nameinput" style="" /><input id="txtemails" class="nameinput" /><select class="nameinput DrpDepartment" style="height: 28px;width: 87%;"></select><label id="lblmsg" style="margin-left: 6%;font-weight: bold;">Message</label><textarea id="txtquestion" class="quesinput"></textarea><center><button class="btnsendreq" id="SendRequest"><a id="sendreqtext" href="#" style="text-decoration:none;color:white;"></a></button></center><div style="display: block; width: 100% !important; font-size: 10px !important;padding-top: 10px; margin-bottom: 10px !important; text-align: center !important;"><span style="font-size: 12px !important;">Powered by </span><a target="_blank" href="http://www.bizchatbox.com/" style="font-family:Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif !important;font-size: 12px !important; text-decoration: underline !important;">BizChatBox.com</a></div></div></td></tr></table><img class="chat-img bottom-img" src="" style="display:none !important;" /><div id="spinnerRegion" class="global-spinner" style="display: none;"><div class="spinner-loader"></div></div></div><div id="Nooperator" class="chatwindow"><img class="chat-img top-img" src="" style="display:none !important;" /><table class="chattable"><tr class="chattableraw"><td id="noophead" class="hedertext"></td><td class="hederbtn"><a href="#" style="padding-left: 5px;" class="minimizebtn"><img id="maxmizes" class="btnimg btnmini" style="margin:auto;vertical-align: middle;" src="' + Url + '/Content/images/icon/plus.png" alt="' + Url + '/Content/images/icon/plus.png" /></a></td></tr><tr id="NoOp-box"><td colspan="2" style="padding:0;"><div class="name-messages" style="padding:5px;"><label id="lblemailintro"></label><p></p><input id="noopname" class="nameinput" placeholder="Name" /><input id="noopemails" class="nameinput" placeholder="Email"/><textarea id="noopquestion" class="quesinput" placeholder="What can we help with?"></textarea><center><button id="btnsendemail"><a id="sendnooptext" href="#" style="text-decoration:none;color:white;"></a></button></center><div style="display: block; width: 100% !important; font-size: 10px !important;padding-top: 10px; margin-bottom: 10px !important; text-align: center !important;"><span style="font-size: 12px !important;">Powered by </span><a target="_blank" href="http://www.bizchatbox.com/" style="font-family:Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif !important;font-size: 12px !important; text-decoration: underline !important;">BizChatBox.com</a></div></div></td></tr></table><img class="chat-img bottom-img" src="" style="display:none !important;" /></div><div id="NooperatorSent" class="chatwindow"><img class="chat-img top-img" src="" style="display:none !important;" /><table class="chattable"><tr class="chattableraw"><td id="noopsenthead" class="hedertext">No Operators Available</td><td id="Nooprefresh" class="hederbtn"><a href="#"><img id="refreshSendMail" style="width: 32px;" class="btnimg" src="' + Url + '/Content/images/icon/refresh.png" alt="' + Url + '/Content/images/icon/refresh.png" /></a></td><td class="hederbtn"><a href="#" style="padding-left: 4px;" class="minimizebtn"><img id="" class="btnimg btnmini" style="margin:auto;vertical-align: middle;" src="' + Url + '/Content/images/icon/plus.png" alt="' + Url + '/Content/images/icon/plus.png" /></a></td></tr><tr id="NoOpSendMail-box"><td colspan="3" style="padding:0;"><div class="name-messages" style="height: 75px;padding:10px;"><label id="lblemailSent">email is sent and should go back to the initial page waiting for new chat sessions.</label></div></td></tr></table><img class="chat-img bottom-img" src="" style="display:none !important;" /></div><div id="inchat" class="chatwindow"><img class="chat-img top-img" src="" style="display:none !important;" /><table class="chattable"><tr class="chattableraw"><td id="inchathead" class="sendreq sendreqbtn">Welcome to LiveChat</td><td class="hederbtn"><a href="#" style="padding-left: 4px;" class="sendreqbtn"><img class="btnimg sendreque sendreq" src="' + Url + '/Content/images/icon/plus.png" alt="' + Url + '/Content/images/icon/plus.png" /></a></td><td class="hederbtn"><a href="#" style="padding-left:6px;"><img id="btnclosechat" style="width: 15px;" class="btnimg" src="' + Url + '/Content/images/icon/close.png" alt="' + Url + '/Content/images/icon/close.png" /></a></td></tr><tr id="message-box"><td colspan="3" style="padding:0;"><div id="operatorimgdiv" class="name-messages" style="height: 56px;overflow: hidden;border-bottom: 5px solid #dcdcdc;"><div style="width:78%; float:left;"><div style="float:left;margin-right:4px;"><img id="operatorprofileimg" style="height: 52px;width: 52px;border-radius: 26px;border: 1px solid;" src="' + Url + '/Content/image/customer_support-128.png" alt="" /></div><div style="float:left;"><div id="operatorname" style="font-size: 20px;font-weight: bold;line-height: 1.5em;"></div><div id="operatorrole" style="font-size:14px;"></div></div></div><div style="width:18%;float: right;margin-top: 5%;margin-right: 2%;"><div style="float:right;"><a href="#"><img class="chatlike chatlikes" id="chatlikes" style="margin-top: 4%;" src="' + Url + '/Content/images/small-like-icon.png" alt="' + Url + '/Content/images/small-like-icon.png" /></a>&nbsp;|&nbsp;<a href="#"><img class="chatlike chatdislikes" id="chatdislikes" src="' + Url + '/Content/images/small-dislike-icon.png" alt="' + Url + '/Content/images/small-dislike-icon.png" /></a><a style="display:none;" href="#"><img src="' + Url + '/Content/images/icon/mail-icon.png" alt="' + Url + '/Content/images/icon/mail-icon.png" /></a></div></div></div><div id="defchat" class="name-messages" style="min-height: 2px;"></div><div id="conchat" class="name-messages" style="min-height: 270px;max-height: 270px; border-bottom: white;border-top: none; word-break: break-all;overflow-y: auto;"><div class="messages"><div id="chatmsgs"></div></div></div><div id="imgtyping" class="name-messages" style="border-top: white;"></div><div class="name-messages sendmess" style="border-top-width:5px;"><textarea id="sendmsgtext" class="messinput" rows="3" placeholder="Type and press[enter]" style="float: left;width: 82%;"></textarea><a href="javascript:void(0)"><img id="MessageSend" src="' + Url + '/Content/image/arrow-right-01-20.png" alt="" style="margin-top: 8%;float:left;" /></a><div style="display: block;margin-top: 85px; width: 100% !important;margin-bottom: 10px !important; text-align: center !important;"><span style="font-size: 12px !important;">Powered by </span><a target="_blank" href="http://www.bizchatbox.com/" style="font-family:Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif !important;font-size: 12px !important; text-decoration: underline !important;">BizChatBox.com</a></div></div></td></tr></table><img class="chat-img bottom-img" src="" style="display:none !important;" /></div><div id="closechat" class="chatwindow"><img class="chat-img top-img" src="" style="display:none !important;" /><table class="chattable"><tr class="chattableraw"><td id="closehead" class="hedertext"></td><td id="clschatrefresh" class="hederbtn"><a href="#"><img id="refreshafterchats" style="width: 32px;height: 32px;" class="btnimg refreshclschats" src="' + Url + '/Content/images/icon/refresh.png" alt="' + Url + '/Content/images/icon/refresh.png" /></a></td><td class="hederbtn"><a href="#" style="padding-left: 4px;" class="minimizebtn"><img style="margin-bottom: 1px; margin:auto; vertical-align: middle;" class="btnimg btnmini" src="' + Url + '/Content/images/icon/plus.png" alt="' + Url + '/Content/images/icon/plus.png" /></a></td></tr><tr id="close-box"><td colspan="3" style="padding:0;"><div class="name-messages"><p style="text-align:center;">Thanks for chatting.</p><p class="clschatmsg"></p><br /><a href="#"><img class="like-img" id="like" src="' + Url + '/Content/images/like.png" alt="" style="margin-left: 35%;" /><img style="margin-left: 7%;" class="like-img" id="dislike" src="' + Url + '/Content/images/dislike.png" alt="" /></a><br /><br /><br /><div style="display: block; width: 100% !important; font-size: 10px !important; padding-top: 10px; margin-bottom: 10px !important; text-align: center !important;"><span style="font-size: 12px !important;">Powered by </span><a target="_blank" href="http://www.bizchatbox.com/" style="font-family:Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif !important;font-size: 12px !important; text-decoration: underline !important;">BizChatBox.com</a></div></div></td></tr></table><img class="chat-img bottom-img" src="" style="display:none !important;" /></div><div id="spinnerRegion" class="global-spinner" style="display: none;"><div class="spinner-loader" style="top: 45%; left: 49%;"></div></div></div>');
+    $('body').append('<div class="animate chatwindow"><div id="startchat" class="chatwindow  "><img class="chat-img top-img" src="" style="display:block !important;" /><table class="chattable"><tr class="chattableraw"><td id="starthead" class="hedertext"></td><td class="hederbtn"><a href="#" style="padding-left: 5px;" class="minimizebtn"><img id="minimize" class="btnimg btnmini" style="margin:auto;vertical-align: middle;" src="http://dashboard.bizchatbox.com/plugin/v2/plus.png" alt="http://dashboard.bizchatbox.com/plugin/v2/plus.png" /></a></td></tr><tr id="name-box"><td colspan="2" style="padding:0;"><div class="name-messages"><h4 class="BizchatBox_TitleInfo" id="lblintro"></h4><input id="txtname" class="nameinput" style="" /><div class="error_message" id="name_error" style=""></div><input id="txtemails" class="nameinput" /><div class="error_message" id="email_error" style=""></div><select class="nameinput DrpDepartment" style="height: 32px;width: 90%;"></select><label id="lblmsg" style="margin-left: 6%;font-weight: bold;">Message</label><textarea id="txtquestion" class="quesinput"></textarea><div class="error_message" id="qust_error" style=""></div><center><button class="btnsendreq" id="SendRequest"><a id="sendreqtext" href="#" style="text-decoration:none;color:white;padding: 0px 10px;"></a></button></center><div class="cls"></div><div class="logo-bizchat"><a target="_blank" href="http://www.bizchatbox.com/?utm_source=window.location.pathname&utm_medium=sdfgs&utm_campaign=Iref"><img src="http://dashboard.bizchatbox.com/plugin/v2/gray-logo.png" class="desaturate" width="100"></a></div></div></td></tr></table><img class="chat-img bottom-img" src="" style="display:none !important;" /><div id="spinnerRegion" class="global-spinner" style="display: none;"><div class="spinner-loader"></div></div></div><div id="Nooperator" class="chatwindow  "><img class="chat-img top-img" src="" style="display:none !important;" /><table class="chattable"><tr class="chattableraw"><td id="noophead" class="hedertext"></td><td class="hederbtn"><a href="#" style="padding-left: 5px;" class="minimizebtn"><img id="maxmizes" class="btnimg btnmini" style="margin:auto;vertical-align: middle;" src="http://dashboard.bizchatbox.com/plugin/v2/plus.png" alt="http://dashboard.bizchatbox.com/plugin/v2/plus.png" /></a></td></tr><tr id="NoOp-box"><td colspan="2" style="padding:0;"><div class="name-messages" style="padding:5px;"><label id="lblemailintro"></label><p></p><input id="noopname" class="nameinput" placeholder="Name" /><div class="error_message" id="2name_error" style=""></div><input id="noopemails" class="nameinput" placeholder="Email"/><div class="error_message" id="2email_error" style=""></div><textarea id="noopquestion" class="quesinput" placeholder="What can we help with?"></textarea><div class="error_message" id="2qust_error" style=""></div><center><button id="btnsendemail"><a id="sendnooptext" href="#" style="text-decoration:none;color:white;"></a></button></center><div class="cls"></div><div class="logo-bizchat"><a target="_blank" href="http://www.bizchatbox.com/?utm_source=window.location.pathname&utm_medium=sdfgs&utm_campaign=Iref"><img src="http://dashboard.bizchatbox.com/plugin/v2/gray-logo.png" class="desaturate" width="100"></a></div></div></td></tr></table><img class="chat-img bottom-img" src="" style="display:none !important;" /></div><div id="NooperatorSent" class="chatwindow  "><img class="chat-img top-img" src="" style="display:none !important;" /><table class="chattable"><tr class="chattableraw"><td id="noopsenthead" class="hedertext">No Operators Available</td><td id="Nooprefresh" class="hederbtn"><a href="#"><img id="refreshSendMail" style="width: 32px;" class="btnimg" src="' + Url + '/Content/images/icon/refresh.png" alt="' + Url + '/Content/images/icon/refresh.png" /></a></td><td class="hederbtn"><a href="#" style="padding-left: 4px;" class="minimizebtn"><img id="" class="btnimg btnmini" style="margin:auto;vertical-align: middle;" src="http://dashboard.bizchatbox.com/plugin/v2/plus.png" alt="http://dashboard.bizchatbox.com/plugin/v2/plus.png" /></a></td></tr><tr id="NoOpSendMail-box"><td colspan="3" style="padding:0;"><div class="name-messages" style="height: 75px;padding:10px;"><label id="lblemailSent">email is sent and should go back to the initial page waiting for new chat sessions.</label></div></td></tr></table><img class="chat-img bottom-img" src="" style="display:none !important;" /></div><div id="inchat" class="chatwindow  "><img class="chat-img top-img" src="" style="display:none !important;" /><table class="chattable"><tr class="chattableraw"><td id="inchathead" class="sendreq sendreqbtn">Welcome to LiveChat</td><td class="hederbtn chatbox1"><a href="#" style="padding-left: 4px;" class="sendreqbtn"><img class="btnimg sendreque" src="http://dashboard.bizchatbox.com/plugin/v2/plus.png" alt="http://dashboard.bizchatbox.com/plugin/v2/plus.png" /></a></td><td class="hederbtn"><a href="#"><img id="btnclosechat" style="width: 15px;" class="btnimg" src="' + Url + '/Content/images/icon/close.png" alt="' + Url + '/Content/images/icon/close.png" /></a></td></tr><tr id="message-box"><td colspan="3" style="padding:0;"><div id="operatorimgdiv" class="name-messages" style="height: 56px;overflow: hidden;border-bottom: 5px solid #dcdcdc;"><div style="width:78%; float:left;"><div style="float:left;"><img id="operatorprofileimg" style="height: 40px;width: 40px;margin: 8px;" src="' + Url + '/Content/image/customer_support-128.png" alt="" /></div><div style="float:left;"><div id="operatorname" style="font-size: 20px;font-weight: bold;line-height: 1.5em;"></div><div id="operatorrole" style="font-size:14px;"></div></div></div><div style="width:20%;float: right;margin-top: 5%;margin-right: 2%;"><div class="thumbbox"><a href="#"><img class="chatlike chatlikes" id="chatlikes" style="margin-top: 4%;" src="http://dashboard.bizchatbox.com/plugin/v2/thumbup.svg" alt="' + Url + '/Content/images/small-like-icon.png" /></a>|<a href="#"><img class="chatlike chatdislikes" id="chatdislikes" src="http://dashboard.bizchatbox.com/plugin/v2/thumbdown.svg" alt="' + Url + '/plugin/v2/small-dislike-icon.png" /></a><a style="display:none;" href="#"><img src="' + Url + '/Content/images/icon/mail-icon.png" alt="' + Url + '/Content/images/icon/mail-icon.png" /></a></div></div></div><div id="defchat" class="name-messages" style="min-height: 2px;"></div><div id="conchat" class="name-messages" style="min-height: 220px;max-height: 220px; border-bottom: white;border-top: none; word-break: break-all;overflow-y: auto; display:block!important;"><div class="messages"><div id="chatmsgs"></div></div></div><div id="imgtyping" class="name-messages" style="border-top: white;"></div><div class="name-messages sendmess" style="border-top-width:5px;"><textarea id="sendmsgtext" style="max-width:225px; float:left" class="messinput" rows="3" placeholder="Type and press[enter]" style="float: left;width: 82%;"></textarea><a href="javascript:void(0)"><img id="MessageSend" src="http://dashboard.bizchatbox.com/plugin/v2/send.png" alt="" style="margin-top: 8%;float:left;" /></a><div class="cls"></div><div class="logo-bizchat"><a target="_blank" href="http://www.bizchatbox.com/?utm_source=window.location.pathname&utm_medium=sdfgs&utm_campaign=Iref"><img src="http://dashboard.bizchatbox.com/plugin/v2/gray-logo.png" class="desaturate" width="100"></a></div></div></td></tr></table><img class="chat-img bottom-img" src="" style="display:none !important;" /></div><div id="closechat" class="chatwindow  "><img class="chat-img top-img" src="" style="display:none !important;" /><table class="chattable"><tr class="chattableraw"><td id="closehead" class="hedertext"></td><td id="clschatrefresh" class="hederbtn"><a href="#"><img id="refreshafterchats" style="width: 32px;height: 32px;" class="btnimg refreshclschats" src="' + Url + '/Content/images/icon/refresh.png" alt="' + Url + '/Content/images/icon/refresh.png" /></a></td><td class="hederbtn"><a href="#" style="padding-left: 4px;" class="minimizebtn"><img style="margin-bottom: 1px; margin:auto; vertical-align: middle;" class="btnimg btnmini" src="http://dashboard.bizchatbox.com/plugin/v2/plus.png" alt="http://dashboard.bizchatbox.com/plugin/v2/plus.png" /></a></td></tr><tr id="close-box"><td colspan="3" style="padding:0;"><div class="name-messages"><p style="text-align:center;">Thanks for chatting.</p><p class="clschatmsg"></p><br /><a href="#"><img class="like-img" id="like" src="http://dashboard.bizchatbox.com/plugin/v2/thumbup.svg" alt="" style="margin-left: 35%;" /><img style="margin-left: 7%;" class="like-img" id="dislike" src="http://dashboard.bizchatbox.com/plugin/v2/thumbdown.svg" alt="" /></a><br /><br /><br /><div class="logo-bizchat" ><a target="_blank" href="http://www.bizchatbox.com/?utm_source=window.location.pathname&utm_medium=sdfgs&utm_campaign=Iref"><img src="http://dashboard.bizchatbox.com/plugin/v2/gray-logo.png" class="desaturate" width="100"></a></div></div></td></tr></table><img class="chat-img bottom-img" src="" style="display:none !important;" /></div><div id="spinnerRegion" class="global-spinner" style="display: none;"><div class="spinner-loader" style="top: 45%; left: 49%;"></div></div></div>');
 
     //#endregion --------------------------------------------------------------
 
@@ -62,7 +62,7 @@ jQuery(function ($) {
     if (wi <= 370) {
         $('.chattable').css('width', wi);
     } else {
-        $('.chattable').css('width', '370px');
+        $('.chattable').css('width', '300px');
     }
 
     $(window).resize(function () {
@@ -70,7 +70,7 @@ jQuery(function ($) {
         if (wi <= 370) {
             $('.chattable').css('width', wi);
         } else {
-            $('.chattable').css('width', '370px');
+            $('.chattable').css('width', '300px');
         }
     });
 
@@ -95,11 +95,13 @@ jQuery(function ($) {
         if (json.Collapse.Position == "Bottom Left" || json.Collapse.Position == "Bottom Right") {
             if (json.Collapse.Type == "Image") {
                 if (aa == "minus.png") {
-                    $(".sendreque").attr('src', Url + '/Content/images/icon/plus.png');
-                    $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                    $(".sendreque").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
+                    $(".btnmini").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
                     Isopen = false;
                     $(".chattable").hide();
                     $('.top-img').show();
+
+                    ToggleHide();
                 }
                 else {
                     $(".sendreque").attr('src', Url + '/Content/images/icon/minus.png');
@@ -107,6 +109,8 @@ jQuery(function ($) {
                     Isopen = true;
                     $(".chattable").show();
                     $('.top-img').hide();
+
+                    ToggleShow();
                     if (IsSendRequest) {
                         IsSendRequest = false;
                         SignalID = chat.connection.id;
@@ -137,8 +141,8 @@ jQuery(function ($) {
                 }
             } else if (json.Collapse.Type == "Image and Tab") {
                 if (aa == "minus.png") {
-                    $(".sendreque").attr('src', Url + '/Content/images/icon/plus.png');
-                    $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                    $(".sendreque").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
+                    $(".btnmini").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
                     Isopen = false;
                     $('.top-img').show();
                 }
@@ -175,10 +179,11 @@ jQuery(function ($) {
                         }, 3000);
                     }
                 }
+                ToggleHideShow();
             } else {
                 if (aa == "minus.png") {
-                    $(".sendreque").attr('src', Url + '/Content/images/icon/plus.png');
-                    $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                    $(".sendreque").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
+                    $(".btnmini").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
                     Isopen = false;
                 }
                 else {
@@ -213,15 +218,18 @@ jQuery(function ($) {
                         }, 3000);
                     }
                 }
+                ToggleHideShow();
             }
         } else {
             if (json.Collapse.Type == "Image") {
                 if (aa == "minus.png") {
-                    $(".sendreque").attr('src', Url + '/Content/images/icon/plus.png');
-                    $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                    $(".sendreque").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
+                    $(".btnmini").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
                     Isopen = false;
                     $(".chattable").hide();
                     $('.bottom-img').show();
+
+                    ToggleHide();
                 }
                 else {
                     $(".sendreque").attr('src', Url + '/Content/images/icon/minus.png');
@@ -229,6 +237,8 @@ jQuery(function ($) {
                     Isopen = true;
                     $(".chattable").show();
                     $('.bottom-img').hide();
+
+                    ToggleShow();
                     if (IsSendRequest) {
                         IsSendRequest = false;
                         SignalID = chat.connection.id;
@@ -259,8 +269,8 @@ jQuery(function ($) {
                 }
             } else if (json.Collapse.Type == "Image and Tab") {
                 if (aa == "minus.png") {
-                    $(".sendreque").attr('src', Url + '/Content/images/icon/plus.png');
-                    $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                    $(".sendreque").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
+                    $(".btnmini").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
                     Isopen = false;
                     $('.bottom-img').show();
                 }
@@ -297,10 +307,11 @@ jQuery(function ($) {
                         }, 3000);
                     }
                 }
+                ToggleHideShow();
             } else {
                 if (aa == "minus.png") {
-                    $(".sendreque").attr('src', Url + '/Content/images/icon/plus.png');
-                    $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                    $(".sendreque").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
+                    $(".btnmini").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
                     Isopen = false;
                 }
                 else {
@@ -335,14 +346,15 @@ jQuery(function ($) {
                         }, 3000);
                     }
                 }
+                ToggleHideShow();
             }
         }
 
-        $("#name-box").toggle('fast');
-        $("#message-box").toggle('fast');
-        $("#close-box").toggle('fast');
-        $("#NoOp-box").toggle('fast');
-        $("#NoOpSendMail-box").toggle('fast');
+        //$("#name-box").toggle('fast');
+        //$("#message-box").toggle('fast');
+        //$("#close-box").toggle('fast');
+        //$("#NoOp-box").toggle('fast');
+        //$("#NoOpSendMail-box").toggle('fast');
     });
 
     $(document).on('click', '.minimizebtn', function () {
@@ -352,20 +364,22 @@ jQuery(function ($) {
         if (json.Collapse.Position == "Bottom Left" || json.Collapse.Position == "Bottom Right") {
             if (json.Collapse.Type == "Image") {
                 if (aa == "minus.png") {
-                    $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                    $(".btnmini").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
                     Isopen = false;
                     $(".chattable").hide();
                     $('.top-img').show();
+                    ToggleHide();
                 }
                 else {
                     $(".btnmini").attr('src', Url + '/Content/images/icon/minus.png');
                     Isopen = true;
                     $(".chattable").show();
                     $('.top-img').hide();
+                    ToggleShow();
                 }
             } else if (json.Collapse.Type == "Image and Tab") {
                 if (aa == "minus.png") {
-                    $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                    $(".btnmini").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
                     Isopen = false;
                     $('.top-img').show();
                 }
@@ -374,33 +388,37 @@ jQuery(function ($) {
                     Isopen = true;
                     $('.top-img').hide();
                 }
+                ToggleHideShow();
             } else {
                 if (aa == "minus.png") {
-                    $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                    $(".btnmini").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
                     Isopen = false;
                 }
                 else {
                     $(".btnmini").attr('src', Url + '/Content/images/icon/minus.png');
                     Isopen = true;
                 }
+                ToggleHideShow();
             }
         } else {
             if (json.Collapse.Type == "Image") {
                 if (aa == "minus.png") {
-                    $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                    $(".btnmini").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
                     Isopen = false;
                     $(".chattable").hide();
                     $('.bottom-img').show();
+                    ToggleHide();
                 }
                 else {
                     $(".btnmini").attr('src', Url + '/Content/images/icon/minus.png');
                     Isopen = true;
                     $(".chattable").show();
                     $('.bottom-img').hide();
+                    ToggleShow();
                 }
             } else if (json.Collapse.Type == "Image and Tab") {
                 if (aa == "minus.png") {
-                    $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                    $(".btnmini").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
                     Isopen = false;
                     $('.bottom-img').show();
                 }
@@ -409,22 +427,24 @@ jQuery(function ($) {
                     Isopen = true;
                     $('.bottom-img').hide();
                 }
+                ToggleHideShow();
             } else {
                 if (aa == "minus.png") {
-                    $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                    $(".btnmini").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
                     Isopen = false;
                 }
                 else {
                     $(".btnmini").attr('src', Url + '/Content/images/icon/minus.png');
                     Isopen = true;
                 }
+                ToggleHideShow();
             }
         }
-        $("#name-box").toggle('fast');
-        $("#message-box").toggle('fast');
-        $("#close-box").toggle('fast');
-        $("#NoOp-box").toggle('fast');
-        $("#NoOpSendMail-box").toggle('fast');
+        //$("#name-box").toggle('fast');
+        //$("#message-box").toggle('fast');
+        //$("#close-box").toggle('fast');
+        //$("#NoOp-box").toggle('fast');
+        //$("#NoOpSendMail-box").toggle('fast');
     });
 
     $(document).on('click', '.top-img', function () {
@@ -448,11 +468,12 @@ jQuery(function ($) {
         if (json.Collapse.Position == "Bottom Left" || json.Collapse.Position == "Bottom Right") {
             if (json.Collapse.Type == "Image") {
                 if (aa == "minus.png") {
-                    $(".sendreque").attr('src', Url + '/Content/images/icon/plus.png');
-                    $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                    $(".sendreque").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
+                    $(".btnmini").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
                     Isopen = false;
                     $(".chattable").hide();
                     $('.top-img').show();
+                    ToggleHide();
                 }
                 else {
                     $(".sendreque").attr('src', Url + '/Content/images/icon/minus.png');
@@ -460,6 +481,7 @@ jQuery(function ($) {
                     Isopen = true;
                     $(".chattable").show();
                     $('.top-img').hide();
+                    ToggleShow();
                     if (json.StartChat.AskforName == false && json.StartChat.AskforEmail == false && json.StartChat.AskforQuestion == false && json.StartChat.AskforDepartment == false) {
                         if (IsSendRequest) {
                             IsSendRequest = false;
@@ -492,8 +514,8 @@ jQuery(function ($) {
                 }
             } else if (json.Collapse.Type == "Image and Tab") {
                 if (aa == "minus.png") {
-                    $(".sendreque").attr('src', Url + '/Content/images/icon/plus.png');
-                    $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                    $(".sendreque").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
+                    $(".btnmini").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
                     Isopen = false;
                     $('.top-img').show();
                 }
@@ -532,10 +554,11 @@ jQuery(function ($) {
                         }
                     }
                 }
+                ToggleHideShow();
             } else {
                 if (aa == "minus.png") {
-                    $(".sendreque").attr('src', Url + '/Content/images/icon/plus.png');
-                    $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                    $(".sendreque").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
+                    $(".btnmini").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
                     Isopen = false;
                 }
                 else {
@@ -572,14 +595,15 @@ jQuery(function ($) {
                         }
                     }
                 }
+                ToggleHideShow();
             }
         }
 
-        $("#name-box").toggle('fast');
-        $("#message-box").toggle('fast');
-        $("#close-box").toggle('fast');
-        $("#NoOp-box").toggle('fast');
-        $("#NoOpSendMail-box").toggle('fast');
+        //$("#name-box").toggle('fast');
+        //$("#message-box").toggle('fast');
+        //$("#close-box").toggle('fast');
+        //$("#NoOp-box").toggle('fast');
+        //$("#NoOpSendMail-box").toggle('fast');
     });
 
     $(document).on('click', '.bottom-img', function () {
@@ -603,11 +627,12 @@ jQuery(function ($) {
 
         if (json.Collapse.Type == "Image") {
             if (aa == "minus.png") {
-                $(".sendreque").attr('src', Url + '/Content/images/icon/plus.png');
-                $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                $(".sendreque").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
+                $(".btnmini").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
                 Isopen = false;
                 $(".chattable").hide();
                 $('.bottom-img').show();
+                ToggleHide();
             }
             else {
                 $(".sendreque").attr('src', Url + '/Content/images/icon/minus.png');
@@ -615,6 +640,7 @@ jQuery(function ($) {
                 Isopen = true;
                 $(".chattable").show();
                 $('.bottom-img').hide();
+                ToggleShow();
                 if (json.StartChat.AskforName == false && json.StartChat.AskforEmail == false && json.StartChat.AskforQuestion == false && json.StartChat.AskforDepartment == false) {
                     if (IsSendRequest) {
                         IsSendRequest = false;
@@ -647,8 +673,8 @@ jQuery(function ($) {
             }
         } else if (json.Collapse.Type == "Image and Tab") {
             if (aa == "minus.png") {
-                $(".sendreque").attr('src', Url + '/Content/images/icon/plus.png');
-                $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                $(".sendreque").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
+                $(".btnmini").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
                 Isopen = false;
                 $('.bottom-img').show();
             }
@@ -687,10 +713,11 @@ jQuery(function ($) {
                     }
                 }
             }
+            ToggleHideShow();
         } else {
             if (aa == "minus.png") {
-                $(".sendreque").attr('src', Url + '/Content/images/icon/plus.png');
-                $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                $(".sendreque").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
+                $(".btnmini").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
                 Isopen = false;
             }
             else {
@@ -727,12 +754,13 @@ jQuery(function ($) {
                     }
                 }
             }
+            ToggleHideShow();
         }
-        $("#name-box").toggle('fast');
-        $("#message-box").toggle('fast');
-        $("#close-box").toggle('fast');
-        $("#NoOp-box").toggle('fast');
-        $("#NoOpSendMail-box").toggle('fast');
+        //$("#name-box").toggle('fast');
+        //$("#message-box").toggle('fast');
+        //$("#close-box").toggle('fast');
+        //$("#NoOp-box").toggle('fast');
+        //$("#NoOpSendMail-box").toggle('fast');
     });
 
     $(document).on('click', '.hedertext', function () {
@@ -742,20 +770,22 @@ jQuery(function ($) {
         if (json.Collapse.Position == "Bottom Left" || json.Collapse.Position == "Bottom Right") {
             if (json.Collapse.Type == "Image") {
                 if (aa == "minus.png") {
-                    $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                    $(".btnmini").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
                     Isopen = false;
                     $(".chattable").hide();
                     $('.top-img').show();
+                    ToggleHide();
                 }
                 else {
                     $(".btnmini").attr('src', Url + '/Content/images/icon/minus.png');
                     Isopen = true;
                     $(".chattable").show();
                     $('.top-img').hide();
+                    ToggleShow();
                 }
             } else if (json.Collapse.Type == "Image and Tab") {
                 if (aa == "minus.png") {
-                    $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                    $(".btnmini").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
                     Isopen = false;
                     $('.top-img').show();
                 }
@@ -764,33 +794,37 @@ jQuery(function ($) {
                     Isopen = true;
                     $('.top-img').hide();
                 }
+                ToggleHideShow();
             } else {
                 if (aa == "minus.png") {
-                    $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                    $(".btnmini").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
                     Isopen = false;
                 }
                 else {
                     $(".btnmini").attr('src', Url + '/Content/images/icon/minus.png');
                     Isopen = true;
                 }
+                ToggleHideShow();
             }
         } else {
             if (json.Collapse.Type == "Image") {
                 if (aa == "minus.png") {
-                    $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                    $(".btnmini").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
                     Isopen = false;
                     $('.bottom-img').show();
                     $(".chattable").hide();
+                    ToggleHide();
                 }
                 else {
                     $(".btnmini").attr('src', Url + '/Content/images/icon/minus.png');
                     Isopen = true;
                     $(".chattable").show();
                     $('.bottom-img').hide();
+                    ToggleShow();
                 }
             } else if (json.Collapse.Type == "Image and Tab") {
                 if (aa == "minus.png") {
-                    $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                    $(".btnmini").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
                     Isopen = false;
                     $('.bottom-img').show();
                 }
@@ -799,51 +833,53 @@ jQuery(function ($) {
                     Isopen = true;
                     $('.bottom-img').hide();
                 }
+                ToggleHideShow();
             } else {
                 if (aa == "minus.png") {
-                    $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                    $(".btnmini").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
                     Isopen = false;
                 }
                 else {
                     $(".btnmini").attr('src', Url + '/Content/images/icon/minus.png');
                     Isopen = true;
                 }
+                ToggleHideShow();
             }
         }
-        $("#name-box").toggle('fast');
-        $("#message-box").toggle('fast');
-        $("#close-box").toggle('fast');
-        $("#NoOp-box").toggle('fast');
-        $("#NoOpSendMail-box").toggle('fast');
+        //$("#name-box").toggle('fast');
+        //$("#message-box").toggle('fast');
+        //$("#close-box").toggle('fast');
+        //$("#NoOp-box").toggle('fast');
+        //$("#NoOpSendMail-box").toggle('fast');
     });
 
     $(document).on('mouseover', '#like', function () {
-        $('#like').attr('src', Url + '/Content/images/likehover.png');
+        $('#like').attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/thumbg.svg');
     });
     $(document).on('mouseover', '#dislike', function () {
-        $('#dislike').attr('src', Url + '/Content/images/dislikehover.png');
+        $('#dislike').attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/thumbr.svg');
     });
     $(document).on('mouseout', '#like', function () {
-        $('#like').attr('src', Url + '/Content/images/like.png');
+        $('#like').attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/thumbup.svg');
     });
     $(document).on('mouseout', '#dislike', function () {
-        $('#dislike').attr('src', Url + '/Content/images/dislike.png');
+        $('#dislike').attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/thumbdown.svg');
     });
 
     $(document).on('mouseover', '#chatlikes', function () {
-        $('#chatlikes').attr('src', Url + '/Content/images/small-likehover.png');
+        $('#chatlikes').attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/thumbg.svg');
     });
     $(document).on('mouseover', '#chatdislikes', function () {
-        $('#chatdislikes').attr('src', Url + '/Content/images/small-dislikehover.png');
+        $('#chatdislikes').attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/thumbr.svg');
     });
     $(document).on('mouseout', '#chatlikes', function () {
-        $('#chatlikes').attr('src', Url + '/Content/images/small-like-icon.png');
+        $('#chatlikes').attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/thumbup.svg');
     });
     $(document).on('mouseout', '#chatdislikes', function () {
-        $('#chatdislikes').attr('src', Url + '/Content/images/small-dislike-icon.png');
+        $('#chatdislikes').attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/thumbdown.svg');
     });
     $(document).on('mouseover', '#MessageSend', function () {
-        $('#MessageSend').css('border', '2px solid ' + json.Color + '');
+        $('#MessageSend').css('border', '0px solid ' + json.Color + '');
     });
     $(document).on('mouseout', '#MessageSend', function () {
         $('#MessageSend').css('border', 'none');
@@ -876,7 +912,10 @@ jQuery(function ($) {
         chat.server.getWidgetDataSend(BizChatID, ChatUserInfoID, VisitorId, WidgetID, chat.connection.id, Key);
 
         $(document).on('click', '#SendRequest', function () {
-           
+            $('#txtemails').css('border-color', '');
+            $('#txtname').css('border-color', '');
+            $('#email_error').hide();
+            $('#name_error').hide();
             if (IsSendRequest) {
                 IsSendRequest = false;
                 IsOperatorAvailable = false;
@@ -935,9 +974,10 @@ jQuery(function ($) {
                                     $('#txtquestion').val("");
 
                                 });
-                                
+
                             } else {
-                                alert("please enter Name.");
+                                $('#txtname').css('border-color', '#CC0000');
+                                $('#name_error').show();
                                 IsSendRequest = true;
                             }
                         } else {
@@ -963,11 +1003,15 @@ jQuery(function ($) {
                                     });
                                 }
                                 else {
-                                    alert("please enter valid email address.");
+                                    //alert("please enter valid email address.");
+                                    $('#txtemails').css('border-color', '#CC0000');
+                                    $('#email_error').show();
                                     IsSendRequest = true;
                                 }
                             } else {
-                                alert("please enter Name.");
+                                //alert("please enter Name.");
+                                $('#txtname').css('border-color', '#CC0000');
+                                $('#name_error').show();
                                 IsSendRequest = true;
                             }
                         }
@@ -981,11 +1025,11 @@ jQuery(function ($) {
 
                 if (!Isopen) {
                     Isopen = true;
-                    $("#name-box").toggle('fast');
-                    $("#message-box").toggle('fast');
-                    $("#close-box").toggle('fast');
-                    $("#NoOp-box").toggle('fast');
-                    $("#NoOpSendMail-box").toggle('fast');
+                    //$("#name-box").toggle('fast');
+                    //$("#message-box").toggle('fast');
+                    //$("#close-box").toggle('fast');
+                    //$("#NoOp-box").toggle('fast');
+                    //$("#NoOpSendMail-box").toggle('fast');
                     $(".btnmini").attr('src', Url + '/Content/images/icon/minus.png');
                 }
                 $(".sendreque").attr('src', Url + '/Content/images/icon/minus.png');
@@ -1004,7 +1048,7 @@ jQuery(function ($) {
                     if (IsNoOperatorcheck) {
                         if (ChatData.ChatMessages != null || ChatData.ChatMessages != undefined) {
                             ChatData.ChatMessages.push({ ImageUrl: null, IsJoin: "false", MessageTime: new Date(), Messagetext: val, SenderId: VisitorId, SenderName: VisitorName, Type: Role });
-                            $('#chatmsgs').append('<div><div style="float: right;height: auto;margin-bottom: 0px;"><img style="border-radius: 20px;border: 1px solid;height:35px;width:35px;" src="' + Url + '/Content/images/avatars/avatar-visitor.png"></div><span class="right" style="word-break: break-word;">' + val + '</span><lable class="righttime">' + Time + '</lable><div class="clear"></div></div>');
+                            $('#chatmsgs').append('<div><span class="right" style="word-break: break-word;">' + val + '<lable class="righttime">' + Time + '</lable></span><div class="clear"></div></div>');
                             $("#conchat").scrollTop($("#conchat")[0].scrollHeight);
                             // inChatSend Method Name Chnage
                             chat.server.sendMessageByVisitor(VisitorId, VisitorName, BizChatID, ChatData.ChatUserInfoID, WidgetID, WidgetName, val, new Date(), Role);
@@ -1012,14 +1056,14 @@ jQuery(function ($) {
                     } else {
                         var ChatMessages = { ImageUrl: null, IsJoin: "false", MessageTime: new Date(), Messagetext: val, SenderId: VisitorId, SenderName: VisitorName, Type: Role };
                         ChatData.ChatMessages.push(ChatMessages);
-                        $('#chatmsgs').append('<div><div style="float: right;height: auto;margin-bottom: 0px;"><img style="border-radius: 20px;border: 1px solid;height:35px;width:35px;" src="' + Url + '/Content/images/avatars/avatar-visitor.png"></div><span class="right" style="word-break: break-word;">' + val + '</span><lable class="righttime">' + Time + '</lable><div class="clear"></div></div>');
+                        $('#chatmsgs').append('<div><span class="right" style="word-break: break-word;">' + val + '<lable class="righttime">' + Time + '</lable></span><div class="clear"></div></div>');
                         $("#conchat").scrollTop($("#conchat")[0].scrollHeight);
                         chat.server.sendMessageByVisitor(VisitorId, VisitorName, BizChatID, ChatUserInfoID, WidgetID, "", val, new Date(), Role);
                     }
                 }
                 else {
                     var ChatMessages = { ImageUrl: null, IsJoin: "false", MessageTime: new Date(), Messagetext: val, SenderId: VisitorId, SenderName: VisitorName, Type: Role };
-                    $('#chatmsgs').append('<div><div style="float: right;height: auto;margin-bottom: 0px;"><img style="border-radius: 20px;border: 1px solid;height:35px;width:35px;" src="' + Url + '/Content/images/avatars/avatar-visitor.png"></div><span class="right" style="word-break: break-word;">' + val + '</span><lable class="righttime">' + Time + '</lable><div class="clear"></div></div>');
+                    $('#chatmsgs').append('<div><span class="right" style="word-break: break-word;">' + val + '<lable class="righttime">' + Time + '</lable></span><div class="clear"></div></div>');
                     $('#chatmsgs').append('<div class="inchatmsg">An operator has not yet connected. Dont worry, an operator will be by shortly! When they connect, they all see all the messages you have sent so far.</div>');
                     $("#conchat").scrollTop($("#conchat")[0].scrollHeight);
                     chat.server.sendMessageByVisitor(VisitorId, VisitorName, BizChatID, null, WidgetID, "", val, new Date(), Role);
@@ -1042,7 +1086,7 @@ jQuery(function ($) {
                         if (IsNoOperatorcheck) {
                             if (ChatData.ChatMessages != null || ChatData.ChatMessages != undefined) {
                                 ChatData.ChatMessages.push({ ImageUrl: null, IsJoin: "false", MessageTime: new Date(), Messagetext: val, SenderId: VisitorId, SenderName: VisitorName, Type: Role });
-                                $('#chatmsgs').append('<div><div style="float: right;height: auto;margin-bottom: 0px;"><img style="border-radius: 20px;border: 1px solid;height:35px;width:35px;" src="' + Url + '/Content/images/avatars/avatar-visitor.png"></div><span class="right" style="word-break: break-word;">' + val + '</span><lable class="righttime">' + Time + '</lable><div class="clear"></div></div>');
+                                $('#chatmsgs').append('<div><span class="right" style="word-break: break-word;">' + val + '<lable class="righttime">' + Time + '</lable></span><div class="clear"></div></div>');
                                 $("#conchat").scrollTop($("#conchat")[0].scrollHeight);
                                 // inChatSend Method Name Chnage
                                 chat.server.sendMessageByVisitor(VisitorId, VisitorName, BizChatID, ChatData.ChatUserInfoID, WidgetID, WidgetName, val, new Date(), Role);
@@ -1050,14 +1094,14 @@ jQuery(function ($) {
                         } else {
                             var ChatMessages = { ImageUrl: null, IsJoin: "false", MessageTime: new Date(), Messagetext: val, SenderId: VisitorId, SenderName: VisitorName, Type: Role };
                             ChatData.ChatMessages.push(ChatMessages);
-                            $('#chatmsgs').append('<div><div style="float: right;height: auto;margin-bottom: 0px;"><img style="border-radius: 20px;border: 1px solid;height:35px;width:35px;" src="' + Url + '/Content/images/avatars/avatar-visitor.png"></div><span class="right" style="word-break: break-word;">' + val + '</span><lable class="righttime">' + Time + '</lable><div class="clear"></div></div>');
+                            $('#chatmsgs').append('<div><span class="right" style="word-break: break-word;">' + val + '<lable class="righttime">' + Time + '</lable></span><div class="clear"></div></div>');
                             $("#conchat").scrollTop($("#conchat")[0].scrollHeight);
                             chat.server.sendMessageByVisitor(VisitorId, VisitorName, BizChatID, ChatUserInfoID, WidgetID, "", val, new Date(), Role);
                         }
                     }
                     else {
                         var ChatMessages = { ImageUrl: null, IsJoin: "false", MessageTime: new Date(), Messagetext: val, SenderId: VisitorId, SenderName: VisitorName, Type: Role };
-                        $('#chatmsgs').append('<div><div style="float: right;height: auto;margin-bottom: 0px;"><img style="border-radius: 20px;border: 1px solid;height:35px;width:35px;" src="' + Url + '/Content/images/avatars/avatar-visitor.png"></div><span class="right" style="word-break: break-word;">' + val + '</span><lable class="righttime">' + Time + '</lable><div class="clear"></div></div>');
+                        $('#chatmsgs').append('<div><span class="right" style="word-break: break-word;">' + val + '<lable class="righttime">' + Time + '</lable></span><div class="clear"></div></div>');
                         $('#chatmsgs').append('<div class="inchatmsg">An operator has not yet connected. Dont worry, an operator will be by shortly! When they connect, they all see all the messages you have sent so far.</div>');
                         $("#conchat").scrollTop($("#conchat")[0].scrollHeight);
                         chat.server.sendMessageByVisitor(VisitorId, VisitorName, BizChatID, null, WidgetID, "", val, new Date(), Role);
@@ -1168,16 +1212,17 @@ jQuery(function ($) {
                 $("#close-box").hide();
                 $("#NoOp-box").hide();
                 $("#NoOpSendMail-box").hide();
-                $(".sendreque").attr('src', Url + '/Content/images/icon/plus.png');
-                $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                $(".sendreque").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
+                $(".btnmini").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
             }, 1500);
             if (!Isopen) {
                 Isopen = true;
-                $("#name-box").toggle('fast');
-                $("#message-box").toggle('fast');
-                $("#close-box").toggle('fast');
-                $("#NoOp-box").toggle('fast');
-                $("#NoOpSendMail-box").toggle('fast');
+                //$("#name-box").toggle('fast');
+                //$("#message-box").toggle('fast');
+                //$("#close-box").toggle('fast');
+                //$("#NoOp-box").toggle('fast');
+                //$("#NoOpSendMail-box").toggle('fast');
+                ToggleHideShow();
                 $(".btnmini").attr('src', Url + '/Content/images/icon/minus.png');
                 $(".sendreque").attr('src', Url + '/Content/images/icon/minus.png');
             }
@@ -1187,19 +1232,24 @@ jQuery(function ($) {
             if (this.id == "chatlikes") {
                 chat.server.closeChatSend(UserId, SignalID, true, BizChatID, ChatUserInfoID, VisitorId, "Like");
                 $('.chatdislikes').attr('id', 'chatdislikes');
-                $("#chatlikes").attr('src', Url + '/Content/images/small-likehover.png');
+                $("#chatlikes").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/thumbg.svg');
                 $('.chatlikes').removeAttr('id');
-                $("#chatdislikes").attr('src', Url + '/Content/images/small-dislike-icon.png');
+                $("#chatdislikes").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/thumbdown.svg');
             } else if (this.id == "chatdislikes") {
                 chat.server.closeChatSend(UserId, SignalID, false, BizChatID, ChatUserInfoID, VisitorId, "DisLike");
                 $('.chatlikes').attr('id', 'chatlikes');
-                $("#chatdislikes").attr('src', Url + '/Content/images/small-dislikehover.png');
+                $("#chatdislikes").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/thumbr.svg');
                 $('.chatdislikes').removeAttr('id');
-                $("#chatlikes").attr('src', Url + '/Content/images/small-like-icon.png');
+                $("#chatlikes").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/thumbup.svg');
             }
         });
 
         $(document).on('click', '#btnsendemail', function () {
+            $('#2email_error').hide();
+            $('#2qust_error').hide();
+            $('#noopname').css('border-color', '');
+            $('#noopemails').css('border-color', '');
+            $('#noopquestion').css('border-color', '');
             var name = $.trim($("#noopname").val());
             var email = $.trim($('#noopemails').val());
             var question = $.trim($('#noopquestion').val());
@@ -1209,18 +1259,28 @@ jQuery(function ($) {
                 if (filter.test(email)) {
                     chat.server.noOperatorSend(BizChatID, name, email, question, CentralEmail);
                 } else {
-                    alert("please enter valid email address");
+                    //$('#2email_error').html('please enter valid email address');
+                    $('#2email_error').show();
+                    $('#noopemails').css('border-color', '#CC0000');
+                    //alert("please enter valid email address");
                 }
             } else {
-                alert("Please enter Name, Email and Question.");
+                $('#noopname').css('border-color', '#CC0000');
+                $('#noopemails').css('border-color', '#CC0000');
+                $('#noopquestion').css('border-color', '#CC0000');
+                $('#2qust_error').show();
+                //$('#2qust_error').html('Please enter Name, Email and Question.');
+                // $('#name_error').html('Please update your Name...');
+                //$('#qust_error').html('Please update your Question ...');
             }
             if (!Isopen) {
                 Isopen = true;
-                $("#name-box").toggle('fast');
-                $("#message-box").toggle('fast');
-                $("#close-box").toggle('fast');
-                $("#NoOp-box").toggle('fast');
-                $("#NoOpSendMail-box").toggle('fast');
+                //$("#name-box").toggle('fast');
+                //$("#message-box").toggle('fast');
+                //$("#close-box").toggle('fast');
+                //$("#NoOp-box").toggle('fast');
+                //$("#NoOpSendMail-box").toggle('fast');
+                ToggleHideShow();
                 $(".btnmini").attr('src', Url + '/Content/images/icon/minus.png');
                 $(".sendreque").attr('src', Url + '/Content/images/icon/minus.png');
             }
@@ -1238,8 +1298,8 @@ jQuery(function ($) {
                 $("#close-box").hide();
                 $("#NoOp-box").hide();
                 $("#NoOpSendMail-box").hide();
-                $(".sendreque").attr('src', Url + '/Content/images/icon/plus.png');
-                $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                $(".sendreque").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
+                $(".btnmini").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
             }
         });
 
@@ -1253,13 +1313,14 @@ jQuery(function ($) {
                     if (!Isopen) {
                     } else {
                         Isopen = false;
-                        $("#name-box").toggle('fast');
-                        $("#message-box").toggle('fast');
-                        $("#close-box").toggle('fast');
-                        $("#NoOp-box").toggle('fast');
-                        $("#NoOpSendMail-box").toggle('fast');
-                        $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
-                        $(".sendreque").attr('src', Url + '/Content/images/icon/plus.png');
+                        //$("#name-box").toggle('fast');
+                        //$("#message-box").toggle('fast');
+                        //$("#close-box").toggle('fast');
+                        //$("#NoOp-box").toggle('fast');
+                        //$("#NoOpSendMail-box").toggle('fast');
+                        ToggleHideShow();
+                        $(".btnmini").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
+                        $(".sendreque").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
                     }
                 }
             }
@@ -1356,16 +1417,17 @@ jQuery(function ($) {
                 $("#close-box").hide();
                 $("#NoOp-box").hide();
                 $("#NoOpSendMail-box").hide();
-                $(".sendreque").attr('src', Url + '/Content/images/icon/plus.png');
-                $(".btnmini").attr('src', Url + '/Content/images/icon/plus.png');
+                $(".sendreque").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
+                $(".btnmini").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/plus.png');
             }, 1500);
             if (!Isopen) {
                 Isopen = true;
-                $("#name-box").toggle('fast');
-                $("#message-box").toggle('fast');
-                $("#close-box").toggle('fast');
-                $("#NoOp-box").toggle('fast');
-                $("#NoOpSendMail-box").toggle('fast');
+                //$("#name-box").toggle('fast');
+                //$("#message-box").toggle('fast');
+                //$("#close-box").toggle('fast');
+                //$("#NoOp-box").toggle('fast');
+                //$("#NoOpSendMail-box").toggle('fast');
+                ToggleHideShow();
                 $(".btnmini").attr('src', Url + '/Content/images/icon/minus.png');
                 $(".sendreque").attr('src', Url + '/Content/images/icon/minus.png');
             }
@@ -1416,7 +1478,7 @@ jQuery(function ($) {
                     json = JSON.parse(Data.JsonString);
                     InChatData = json.InChat;
                     for (var k in GetDepartments) {
-                        if(GetDepartments[k]){
+                        if (GetDepartments[k]) {
                             $('.DrpDepartment').append('<option value="' + GetDepartments[k].DepartmentId + '">' + GetDepartments[k].DepartmentName + '</option>');
                         }
                     }
@@ -1488,9 +1550,9 @@ jQuery(function ($) {
             $('#closechat').show();
             $('.messinput').val("");
             $('.chatdislikes').attr('id', 'chatdislikes');
-            $("#chatdislikes").attr('src', Url + '/Content/images/small-dislike-icon.png');
+            $("#chatdislikes").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/thumbdown.svg');
             $('.chatlikes').attr('id', 'chatlikes');
-            $("#chatlikes").attr('src', Url + '/Content/images/small-like-icon.png');
+            $("#chatlikes").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/thumbup.svg');
             Isopen = true;
         }
     }
@@ -1509,9 +1571,9 @@ jQuery(function ($) {
             $('#closechat').show();
             $('.messinput').val("");
             $('.chatdislikes').attr('id', 'chatdislikes');
-            $("#chatdislikes").attr('src', Url + '/Content/images/small-dislike-icon.png');
+            $("#chatdislikes").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/thumbdown.svg');
             $('.chatlikes').attr('id', 'chatlikes');
-            $("#chatlikes").attr('src', Url + '/Content/images/small-like-icon.png');
+            $("#chatlikes").attr('src', 'http://dashboard.bizchatbox.com/plugin/v2/thumbup.svg');
             Isopen = true;
         }
     }
@@ -1536,7 +1598,7 @@ jQuery(function ($) {
                                     $('#chatmsgs').append('<div class="inchatmsg">' + GetData.ChatMessages[i].Messagetext + '</div>');
                                 }
                             } else {
-                                $('#chatmsgs').append('<div><div style="float: left;height: auto;margin-bottom: 0px;"><img style="border-radius: 20px;border: 1px solid;height:35px;width:35px;" src="' + Url + GetData.ChatMessages[i].ImageUrl + '"></div><span class="left" style="word-break: break-word;background: ' + json.Color + '">' + GetData.ChatMessages[i].Messagetext + '</span><lable class="lefttime">' + Time + '</lable><div class="clear"></div></div>');
+                                $('#chatmsgs').append('<div><div style="float: left;height: auto;margin-bottom: 0px;"><img style="width:35px;" src="' + Url + GetData.ChatMessages[i].ImageUrl + '"></div><span class="left" style="word-break: break-word;background: ' + json.Color + '"><lable class="leftname">shivak</lable>' + GetData.ChatMessages[i].Messagetext + '<lable class="lefttime">' + Time + '</lable></span><div class="clear"></div></div>');
                                 $('.left').append('<style>.left:after{border-right:8px solid ' + json.Color + '}</style>');
                                 $("#conchat").scrollTop($("#conchat")[0].scrollHeight);
                                 $("#conchat").show();
@@ -1563,7 +1625,12 @@ jQuery(function ($) {
                                     $('#chatmsgs').append('<div class="inchatmsg">' + GetData.ChatMessages[i].Messagetext + '</div>');
                                 }
                             } else {
-                                $('#chatmsgs').append('<div><div style="float: left;height: auto;margin-bottom: 0px;"><img style="border-radius: 20px;border: 1px solid;height:35px;width:35px;" src="' + Url + GetData.ChatMessages[i].ImageUrl + '"></div><span class="left" style="word-break: break-word;background: ' + json.Color + '">' + GetData.ChatMessages[i].Messagetext + '</span><lable class="lefttime">' + Time + '</lable><div class="clear"></div></div>');
+                                if (GetData.ChatMessages[i].ImageUrl == "") {
+                                    $('#chatmsgs').append('<div><div style="float: left;height: auto;margin-bottom: 0px;"><img style="width:35px;" src="' + Url + '/Content/images/avatars/1avatar-operator.png' + '"></div><span class="left" style="word-break: break-word;background: ' + json.Color + '">' + GetData.ChatMessages[i].Messagetext + '<lable class="lefttime">' + Time + '</lable></span><div class="clear"></div></div>');
+                                } else {
+                                    $('#chatmsgs').append('<div><div style="float: left;height: auto;margin-bottom: 0px;"><img style="width:35px;" src="' + Url + GetData.ChatMessages[i].ImageUrl + '"></div><span class="left" style="word-break: break-word;background: ' + json.Color + '">' + GetData.ChatMessages[i].Messagetext + '<lable class="lefttime">' + Time + '</lable></span><div class="clear"></div></div>');
+                                }
+                                //$('#chatmsgs').append('<div><div style="float: left;height: auto;margin-bottom: 0px;"><img style="width:35px;" src="' + Url + GetData.ChatMessages[i].ImageUrl + '"></div><span class="left" style="word-break: break-word;background: ' + json.Color + '">' + GetData.ChatMessages[i].Messagetext + '<lable class="lefttime">' + Time + '</lable></span><div class="clear"></div></div>');
                                 $('.left').append('<style>.left:after{border-right:8px solid ' + json.Color + '}</style>');
                                 $("#conchat").scrollTop($("#conchat")[0].scrollHeight);
                                 $("#conchat").show();
@@ -1623,9 +1690,9 @@ jQuery(function ($) {
                         }
                         else {
                             if (GetDatas.ChatMessages[i].Type == "Visitor") {
-                                $('#chatmsgs').append('<div><div style="float: right;height: auto;margin-bottom: 0px;"><img style="border-radius: 20px;border: 1px solid;height:35px;width:35px;" src="' + Url + '/Content/images/avatars/avatar-visitor.png"></div><span class="right" style="word-break: break-word;">' + GetDatas.ChatMessages[i].Messagetext + '</span><lable class="righttime">' + Time + '</lable><div class="clear"></div></div>');
+                                $('#chatmsgs').append('<div><span class="right" style="word-break: break-word;">' + GetDatas.ChatMessages[i].Messagetext + '<lable class="righttime">' + Time + '</lable></span><div class="clear"></div></div>');
                             } else {
-                                $('#chatmsgs').append('<div><div style="float: left;height: auto;margin-bottom: 0px;"><img style="border-radius: 20px;border: 1px solid;height:35px;width:35px;" src="' + Url + GetDatas.ChatMessages[i].ImageUrl + '"></div><span class="left" style="word-break: break-word;background: ' + json.Color + '">' + GetDatas.ChatMessages[i].Messagetext + '</span><lable class="lefttime">' + Time + '</lable><div class="clear"></div></div>');
+                                $('#chatmsgs').append('<div><div style="float: left;height: auto;margin-bottom: 0px;"><img style="width:35px;" src="' + Url + GetDatas.ChatMessages[i].ImageUrl + '"></div><span class="left" style="word-break: break-word;background: ' + json.Color + '">' + GetDatas.ChatMessages[i].Messagetext + '<lable class="lefttime">' + Time + '</lable></span><div class="clear"></div></div>');
                                 $('.left').append('<style>.left:after{border-right:8px solid ' + json.Color + '}</style>');
                             }
                         }
@@ -1741,16 +1808,17 @@ function BindWidget(AllData) {
     startchat(AllData);
     CloseChat(AllData.ChatClose);
     SetImgPosition(AllData);
-    // WidgetsAnimate(AllData.Collapse);
+    //WidgetsAnimate(AllData.Collapse);
 
     if (AllData.Enable) {
-        jQuery('.chattableraw').attr("style", "background: " + AllData.Color + " !important");
-        jQuery('.btnsendreq').attr("style", "background: " + AllData.Color + " !important");
+        jQuery('.chattableraw').attr("style", "background: " + AllData.Color + "!important ");
+        jQuery('.btnsendreq').attr("style", "background: " + AllData.Color + "!important ");
         jQuery('#btnsendemail').attr("style", "background: " + AllData.Color + " !important");
-        jQuery('.sendmess').css('border-top-color', '' + AllData.Color + ' !important');
-        jQuery('.hedertext').attr("style", "background: " + AllData.Color + " !important");
+        jQuery('.sendmess').css('border-top-color', '' + AllData.Color + '!important ');
+        jQuery('.hedertext').attr("style", "background: " + AllData.Color + "!important ");
         jQuery('.hederbtn').attr("style", "background: " + AllData.Color + " !important");
         jQuery('#inchathead').attr("style", "background: " + AllData.Color + " !important");
+        jQuery('#MessageSend').attr("style", "background: " + AllData.Color + " !important");
         // hedertext, hederbtn,inchathead
     }
 
@@ -1889,7 +1957,7 @@ function getSetFormate(val) {
 function SetPosition(val) {
     //jQuery("#Position").select2("val", val.Position);
     if (val.Position == "Bottom Left") {
-        jQuery('.chatwindow').css({ 'bottom': '0', 'left': '0', 'top': '', 'right': '', 'position': 'fixed', 'z-index': '999' });
+        jQuery('.chatwindow').css({ 'bottom': '0', 'left': '10px', 'top': '', 'right': '', 'position': 'fixed', 'z-index': '999' });
         if (val.Type == "Image") {
             if (val.Image != 0) {
                 jQuery(".top-img").show();
@@ -1916,7 +1984,7 @@ function SetPosition(val) {
             }
         }
     } else if (val.Position == "Bottom Right") {
-        jQuery('.chatwindow').css({ 'bottom': '0', 'left': '', 'top': '', 'right': '0', 'position': 'fixed', 'z-index': '999' });
+        jQuery('.chatwindow').css({ 'bottom': '0', 'left': '', 'top': '', 'right': '10px', 'position': 'fixed', 'z-index': '999' });
         if (val.Type == "Image") {
             if (val.Image != 0) {
                 jQuery(".top-img").show();
@@ -1942,7 +2010,7 @@ function SetPosition(val) {
             }
         }
     } else if (val.Position == "Top Left") {
-        jQuery('.chatwindow').css({ 'bottom': '', 'left': '0', 'top': '0', 'right': '', 'position': 'fixed', 'z-index': '999' });
+        jQuery('.chatwindow').css({ 'bottom': '', 'left': '10px', 'top': '0', 'right': '', 'position': 'fixed', 'z-index': '999' });
         if (val.Type == "Image") {
             if (val.Image != 0) {
                 jQuery(".top-img").hide();
@@ -1967,7 +2035,7 @@ function SetPosition(val) {
             }
         }
     } else if (val.Position == "Top Right") {
-        jQuery('.chatwindow').css({ 'bottom': '', 'left': '', 'top': '0', 'right': '0', 'position': 'fixed', 'z-index': '999' });
+        jQuery('.chatwindow').css({ 'bottom': '', 'left': '', 'top': '0', 'right': '10px', 'position': 'fixed', 'z-index': '999' });
         if (val.Type == "Image") {
             if (val.Image != 0) {
                 jQuery(".top-img").hide();
@@ -2002,6 +2070,18 @@ function startchat(val) {
     jQuery('#txtemails').attr('placeholder', val.StartChat.AskforEmailInput);
     jQuery('#txtquestion').attr('placeholder', val.StartChat.AskforQuestionInput);
     jQuery('#sendreqtext').text(val.StartChat.RequestButton);
+
+    //Bind Error Message
+    jQuery('#name_error').text(val.ErrorMessage.NameRequired);
+    jQuery('#email_error').text(val.ErrorMessage.EmailValid);
+    jQuery('#2email_error').text(val.ErrorMessage.EmailValid);
+    jQuery('#2qust_error').text(val.ErrorMessage.NoOperatorRequired);
+
+    jQuery('#name_error').hide();
+    jQuery('#email_error').hide();
+    jQuery('#2email_error').hide();
+    jQuery('#2name_error').hide();
+    jQuery('#2qust_error').hide();
 
     if (val.StartChat.AskforName) {
         jQuery('#txtname').show();
@@ -2069,11 +2149,11 @@ function NoOperator(val) {
 
 function InChat(val, VisitorName) {
     jQuery('#conchat').hide();
-    jQuery('#defchat').css('min-height', '270px');
+    // jQuery('#defchat').css('min-height', '270px');
     jQuery('#defchat').show();
     jQuery('#defchat').append('<lable>' + val.Greeting + ' ' + VisitorName + '!</lable><br/>');
     jQuery('#defchat').append('<lable>' + val.Connecting + '</lable>');
-    jQuery('#defchat').append('<img src="' + Url + '/Content/images/icon/loadingBar.gif" alt="" style="margin-left: 35%;margin-top: 22%;" />');
+    // jQuery('#defchat').append('<img src="' + Url + '/Content/images/icon/loadingBar.gif" alt="" style="width:30px;" />');
     //jQuery('#sendmsgtext').attr('placeholder', val.SendMessage);
     setTimeout(function () {
         jQuery('#defchat').empty();
@@ -2119,9 +2199,9 @@ function ChatContent(InChatData) {
                 }
                 else {
                     if (InChatData[i].Type == "Visitor") {
-                        jQuery('#chatmsgs').append('<div><div style="float: right;height: auto;margin-bottom: 0px;"><img style="border-radius: 20px;border: 1px solid;height:35px;width:35px;" src="' + Url + '/Content/images/avatars/avatar-visitor.png"></div><span class="right" style="word-break: break-word;">' + InChatData[i].Messagetext + '</span><lable class="righttime">' + Time + '</lable><div class="clear"></div></div>');
+                        jQuery('#chatmsgs').append('<div><span class="right" style="word-break: break-word;">' + InChatData[i].Messagetext + '<lable class="righttime">' + Time + '</lable></span><div class="clear"></div></div>');
                     } else {
-                        jQuery('#chatmsgs').append('<div><div style="float: left;height: auto;margin-bottom: 0px;"><img style="border-radius: 20px;border: 1px solid;height:35px;width:35px;" src="' + Url + InChatData[i].ImageUrl + '"></div><span class="left" style="word-break: break-word;background: ' + json.Color + '">' + InChatData[i].Messagetext + '</span><lable class="lefttime">' + Time + '</lable><div class="clear"></div></div>');
+                        jQuery('#chatmsgs').append('<div><div style="float: left;height: auto;margin-bottom: 0px;"><img style="width:35px;" src="' + Url + InChatData[i].ImageUrl + '"></div><span class="left" style="word-break: break-word;background: ' + json.Color + '">' + InChatData[i].Messagetext + '<lable class="lefttime">' + Time + '</lable></span><div class="clear"></div></div>');
                         jQuery('.left').append('<style>.left:after{border-right:8px solid ' + json.Color + '}</style>');
                     }
                 }
@@ -2138,7 +2218,7 @@ function SetImgPosition(val) {
     }
     else {
         if (val.Collapse.IsCustom) {
-            jQuery(".chat-img").attr('src', val.Collapse.CustomImageUrl);
+            jQuery(".chat-img").attr('src', Url + val.Collapse.CustomImageUrl);
         }
     }
     jQuery(".chat-img").css('width', '' + val.Collapse.Scale + '%');
@@ -2250,4 +2330,55 @@ function WidgetsAnimate(val) {
     json.Collapse.Animate = false;
 }
 
+function ToggleHideShow() {
+    if (jQuery("#name-box").is(':visible')) {
+        jQuery("#name-box").hide();
+    }
+    else if (jQuery("#name-box").is(':hidden')) {
+        jQuery("#name-box").show();
+    }
 
+    if (jQuery("#message-box").is(':visible')) {
+        jQuery("#message-box").hide();
+    }
+    else if (jQuery("#message-box").is(':hidden')) {
+        jQuery("#message-box").show();
+    }
+
+    if (jQuery("#close-box").is(':visible')) {
+        jQuery("#close-box").hide();
+    }
+    else if (jQuery("#close-box").is(':hidden')) {
+        jQuery("#close-box").show();
+    }
+
+    if (jQuery("#NoOp-box").is(':visible')) {
+        jQuery("#NoOp-box").hide();
+    }
+    else if (jQuery("#NoOp-box").is(':hidden')) {
+        jQuery("#NoOp-box").show();
+    }
+
+    if (jQuery("#NoOpSendMail-box").is(':visible')) {
+        jQuery("#NoOpSendMail-box").hide();
+    }
+    else if (jQuery("#NoOpSendMail-box").is(':hidden')) {
+        jQuery("#NoOpSendMail-box").show();
+    }
+}
+
+function ToggleHide() {
+    jQuery("#name-box").hide();
+    jQuery("#message-box").hide();
+    jQuery("#close-box").hide();
+    jQuery("#NoOp-box").hide();
+    jQuery("#NoOpSendMail-box").hide();
+}
+
+function ToggleShow() {
+    jQuery("#name-box").show();
+    jQuery("#message-box").show();
+    jQuery("#close-box").show();
+    jQuery("#NoOp-box").show();
+    jQuery("#NoOpSendMail-box").show();
+}
