@@ -8,7 +8,7 @@ Plugin Name: BizChatBox
 Plugin URI: 
 Description: BizChatBox is packed with all the features you need to provide premium customer support. It is light weight, reliable, customizable and scalable chat widget. Gain your competitive advantage today.
 Author: BizChatBox
-Version: 1.7
+Version: 1.8
 Author URI: www.bizchatbox.com
 */
 
