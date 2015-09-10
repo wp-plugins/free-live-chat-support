@@ -1,7 +1,7 @@
 <?php
 /**
  * @package Biz_chat
- * @version 1.7
+ * @version 1.8
  */
 /*
 Plugin Name: BizChatBox
