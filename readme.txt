@@ -86,9 +86,9 @@ Yes, deactivating the BizChatBox plugin will stop the widget from showing up, bu
 
 == Screenshots ==
 
-1. Chat widget
+1. Chat Widget Minimized
 
-2. Operator chat dashboard
+2. Live Chat Session
 
 3. Customize Chat Widget
 
