@@ -81,7 +81,6 @@ No! There are no annoying ads in BizChatBox.
 You decide! Your widget can display an offline indicator, disappear entirely, or let visitors email you with their questions.
  
 6. Can I temporarily remove the chat widget from my site without losing my settings?
-
 Yes, deactivating the BizChatBox plugin will stop the widget from showing up, but your preferred widget settings will remain for when you want to reactivate it.
 
 == Screenshots ==
@@ -96,10 +95,8 @@ Yes, deactivating the BizChatBox plugin will stop the widget from showing up, bu
 = 1.7 =
 * Safari Browser issue resolved. UI Improved
 
-
 = 1.6 =
 * Cross Browser sign up issue resolved and minor UI changes
-
 
 = 1.5 =
 * GEO IP issue resolved 
@@ -118,22 +115,17 @@ Yes, deactivating the BizChatBox plugin will stop the widget from showing up, bu
 = 1.7 =
 * Safari Browser issue resolved. UI Improved
 
-
 = 1.6 =
 * Cross Browser sign up issue resolved and minor UI changes
-
 
 = 1.5 =
 * GEO IP issue resolved 
 
-
 = 1.2 =
 * Load performance improved. Layout improvements. 
 
-
 = 1.1 =
 * Minor Bug fixes
-
 
 = 1.0 =
 * Plugin launch.
