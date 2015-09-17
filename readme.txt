@@ -72,7 +72,7 @@ You can change all your widget settings from your BizChatBox dashboard.
 
 BizChatBox is 100% Free.
  
-4. Are there any ads?
+4. Are there any advertisements?
 
 No! There are no annoying ads in BizChatBox.
  
