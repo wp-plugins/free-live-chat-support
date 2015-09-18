@@ -27,6 +27,8 @@ Unlimited Chats on unlimited websites, blogs, forums etc
 
 Unlimited Operators Accounts
 
+We support 30+ Languages
+
 iPhone and Android Mobile Apps
 
 No Advertisements
