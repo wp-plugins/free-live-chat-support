@@ -31,7 +31,7 @@ We support 30+ Languages
 
 iPhone and Android Mobile Apps
 
-No Advertisements
+No advertisements
 
 Highly customizable designs
 
