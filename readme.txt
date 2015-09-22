@@ -94,6 +94,9 @@ Yes, deactivating the BizChatBox plugin will stop the widget from showing up, bu
 3. Customize Chat Widget
 
 == Changelog ==
+= 1.8 =
+* Improved UI and reslve cross teomplate issues
+
 = 1.7 =
 * Safari Browser issue resolved. UI Improved
 
