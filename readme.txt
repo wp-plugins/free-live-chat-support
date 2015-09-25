@@ -85,11 +85,12 @@ You decide! Your widget can display an offline indicator, disappear entirely, or
 6. Can I temporarily remove the chat widget from my site without losing my settings?
 Yes, deactivating the BizChatBox plugin will stop the widget from showing up, but your preferred widget settings will remain for when you want to reactivate it.
 
+
 == Screenshots ==
 
 1. Chat Widget Minimized
 
-2. Live Chat Session
+2. Live Chat Widget 
 
 3. Customize Chat Widget
 
