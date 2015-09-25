@@ -14,7 +14,7 @@ BizChatBox  is a Web App that makes it easy for website owners to chat with thei
 
 Website : www.bizchatbox.com
 
-Demo : https://www.youtube.com/watch?v=p1_AZzc4Rqo
+Demo : https://www.youtube.com/watch?v=ABVqQVsmpbE
 
 Installation: https://www.youtube.com/watch?v=sq5rHwvYv8Q
 
