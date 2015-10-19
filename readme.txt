@@ -1,9 +1,9 @@
 === BizChatBox - Free Live Chat Plugin ===
 Contributors: BizChatBox
 Donate link: https://www.BizChatBox.com
-Tags: chat, livechat, chats, live chat, bizchatbox, web chat, online chat, chat online, wordpress chat, customer support, live help, chat widget, customer help, chat widget, Free chat, free live chat, plugin, widget, chat plugin, ecommerce, live chat plugin, live help, visitor chat, WordPress chat, online support, support, support plugin, live help, Post, Posts, sidebar, page, pages, comments, e-commerce, notification, social, widgets, wp chat
+Tags: chat, livechat online, livechat, chats, live chat, bizchatbox, web chat, online chat, chat online, wordpress chat, customer support, live help, chat widget, customer help, chat widget, Free chat, free live chat, plugin, widget, chat plugin, ecommerce, live chat plugin, live help, visitor chat, WordPress chat, online support, support, support plugin, live help, Post, Posts, sidebar, page, pages, comments, e-commerce, notification, social, widgets, wp chat
 Requires at least: 3.0.1
-Tested up to: 4.2.4
+Tested up to: 4.3.1
 Stable tag: trunk
 
 BizchatBox is a 100% FREE hosted live chat software that allows businesses to engage with their customers in real time. Try it for free!
@@ -27,17 +27,17 @@ Unlimited Chats on unlimited websites, blogs, forums etc
 
 Unlimited Operators Accounts
 
-We support 30+ Languages
+We support 31 Languages
 
 iPhone and Android Mobile Apps
 
 No advertisements
 
-Highly customizable designs
+Highly customizable look and feel design
 
-Geolocation data for users -- know where your visitors are from!
+Geo-location data for users -- know where your visitors are from!
 
-Ban users by IP
+Ban users by IP also unblock them as you need
 
 Daily emails reports
 
@@ -49,16 +49,24 @@ Customizable canned responses for common questions
 
 Integrations with third party products
 
-Check out our website fore more details http://www.bizchatbox.com/features/
+Chat Widget Animations
+
+Custom Image on chat Widget
+
+Use animated GIF for chat widget images
+
+if you have any problems using BizChatBox please do not hesitate to contact us : info@bizchatbox.com
 
 == Installation ==
+
+Installation: https://www.youtube.com/watch?v=sq5rHwvYv8Q
 
 1. Install and activate plug-in.
 2. Click on the new BizChatBox button in your left sidebar.
 3. Click on Setup Your Chat Widget button.
 4. Sign in or create a new account 
 5. Select a widget for your web site.
-6. Click the link to your BizChatBox dashboard and get ready to chat!
+6. Click the link to your BizChatBox dashboard and get ready to Customer Support!
 
 == Frequently Asked Questions ==
 
@@ -83,6 +91,7 @@ No! There are no annoying ads in BizChatBox.
 You decide! Your widget can display an offline indicator, disappear entirely, or let visitors email you with their questions.
  
 6. Can I temporarily remove the chat widget from my site without losing my settings?
+
 Yes, deactivating the BizChatBox plugin will stop the widget from showing up, but your preferred widget settings will remain for when you want to reactivate it.
 
 
@@ -92,11 +101,11 @@ Yes, deactivating the BizChatBox plugin will stop the widget from showing up, bu
 
 2. Live Chat Widget 
 
-3. Customize Chat Widget
+3. Customize Chat Widget via BizChatBox Dashboard
 
 == Changelog ==
 = 1.8 =
-* Improved UI and reslve cross teomplate issues
+* Improved UI and resolve cross template issues
 
 = 1.7 =
 * Safari Browser issue resolved. UI Improved
@@ -119,7 +128,7 @@ Yes, deactivating the BizChatBox plugin will stop the widget from showing up, bu
 
 == Upgrade Notice ==
 = 1.8 =
-* Improved UI and reslve cross teomplate issues
+* Improved UI and resolve cross template issues
 
 = 1.7 =
 * Safari Browser issue resolved. UI Improved
