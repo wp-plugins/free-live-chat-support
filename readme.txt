@@ -35,7 +35,7 @@ No advertisements
 
 Highly customizable look and feel design
 
-Geo-location data for users -- know where your visitors are from.
+Geo-location data for users -- know where your visitors are from!
 
 Ban users by IP also unblock them as you need
 
